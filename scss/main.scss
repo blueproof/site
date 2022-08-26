@@ -1,39 +1,12 @@
-@use "pre";
+@use "vars";
 @use "mixins";
-
-section {
-    width: min(90vw, 1300px);
-    height: auto;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 3vw;
-    > .content {
-        width: 100%;
-    }
-}
-
-section + section {
-    padding-top: 30vh;
-}
-
-@include mixins.breakpoint(desktop) {
-    section {
-        padding: 0 auto;
-        // height: 100vh;
-    }
-    section + section {
-        padding-top: 30vh;
-    }
-}
+@use "pre";
 
 .hero {
     height: 100vh;
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: center;
     gap: 2vh;
     .logo {
@@ -57,7 +30,7 @@ section + section {
     display: grid;
     grid-template-columns: auto 1fr;
     align-items: center;
-    font-size: 6mm;
+    font-size: 5mm;
     letter-spacing: 1mm;
     z-index: 10;
     .right {
@@ -77,8 +50,9 @@ section + section {
         li {
             position: relative;
             a {
-                color: pre.$col_fg;
+                color: vars.$col_fg;
                 text-decoration: none;
+                cursor: pointer;
             }
             & + li::before {
                 content: "|";
@@ -92,12 +66,27 @@ section + section {
     }
 }
 
+.sections {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20vh;
+    width: min(85vw, 1200px);
+    margin: 0 auto;
+}
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // padding: 0 3vw;
+}
+
 .title-l-r,
 .title-r-l {
     display: grid;
     grid-template-rows: auto auto auto;
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.5rem;
     height: min-content;
 
     .title {
@@ -125,7 +114,16 @@ section + section {
         "left";
 }
 
+.title-c {
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: 1.5rem;
+}
+
 @include mixins.breakpoint(desktop) {
+    .title-c {
+        gap: 1rem;
+    }
     .title-l-r,
     .title-r-l {
         grid-template-rows: auto 1fr;
@@ -161,6 +159,7 @@ section + section {
                 height: 3rem;
             }
             .name {
+                margin-top: 1rem;
                 font-size: 0.6rem;
             }
         }
@@ -173,7 +172,8 @@ section + section {
                     height: 3rem;
                 }
                 .name {
-                    margin: none;
+                    margin-top: 1rem;
+
                     font-size: 0.8rem;
                 }
             }
@@ -184,24 +184,27 @@ section + section {
 .projects {
     .carousel {
         width: min(100%, 1200px);
+        @include mixins.breakpoint(desktop) {
+            height: 400px;
+        }
         margin: auto;
     }
 
     .project {
         width: 100%;
         display: grid;
-
+        min-height: 75vh;
         grid-template-columns: auto;
         grid-template-rows: auto 20vh auto auto;
-        grid-template-areas: "heading" "image" "text" "button";
-
+        grid-template-areas: "heading" "image" "text";
+        justify-content: flex-start;
         @include mixins.breakpoint(desktop) {
+            height: 100%;
             grid-template-columns: 3fr 2fr;
-            grid-template-rows: auto auto auto;
+            grid-template-rows: auto 1fr;
             grid-template-areas:
                 "image heading"
-                "image text"
-                "image button";
+                "image text";
         }
 
         .image {
@@ -229,22 +232,11 @@ section + section {
                 font-style: italic;
             }
             .author {
-                float: right;
+                text-align: right;
             }
-        }
-        .view {
-            grid-area: button;
-            @include mixins.button-style;
-            width: fit-content;
-            height: fit-content;
-            background: none;
-            border: 2px solid pre.$col_fg;
-            padding: 5px 3ch;
-            color: pre.$col_fg;
-            border-radius: 1rem;
-            margin: auto auto;
-
-            @include mixins.blue-clickable;
+            .view {
+                @include mixins.button-style;
+            }
         }
     }
 }
@@ -314,7 +306,7 @@ section + section {
         resize: none;
 
         &:focus-within {
-            outline: pre.$col_contrast1 auto 1px;
+            outline: vars.$col_contrast1 auto 1px;
         }
     }
 

@@ -1,5 +1,4 @@
-@use "pre";
-
+@use "vars";
 $prefix: "-moz-", "-webkit-", "";
 
 @mixin keyframes($name) {
@@ -35,18 +34,18 @@ $prefix: "-moz-", "-webkit-", "";
 }
 
 @mixin blue-text-shadow {
-    text-shadow: 0 1px 0 pre.$col_contrast1, 0 2px 0 pre.$col_contrast2,
-        0 3px 0 pre.$col_contrast3, 0 4px 0 pre.$col_contrast4,
-        0 5px 0 pre.$col_contrast5, 0 6px 0 pre.$col_contrast6;
+    text-shadow: 0 1px 0 vars.$col_contrast1, 0 2px 0 vars.$col_contrast2,
+        0 3px 0 vars.$col_contrast3, 0 4px 0 vars.$col_contrast4,
+        0 5px 0 vars.$col_contrast5, 0 6px 0 vars.$col_contrast6;
     transition: text-shadow 0.15s ease-in-out;
 }
 @mixin blue-drop-shadow {
-    filter: drop-shadow(0 0.35px 0 pre.$col_contrast1)
-        drop-shadow(0 0.7px 0 pre.$col_contrast2)
-        drop-shadow(0 1.05px 0 pre.$col_contrast3)
-        drop-shadow(0 1.4px 0 pre.$col_contrast4)
-        drop-shadow(0 1.75px 0 pre.$col_contrast5)
-        drop-shadow(0 2.1px 0 pre.$col_contrast6);
+    filter: drop-shadow(0 0.35px 0 vars.$col_contrast1)
+        drop-shadow(0 0.7px 0 vars.$col_contrast2)
+        drop-shadow(0 1.05px 0 vars.$col_contrast3)
+        drop-shadow(0 1.4px 0 vars.$col_contrast4)
+        drop-shadow(0 1.75px 0 vars.$col_contrast5)
+        drop-shadow(0 2.1px 0 vars.$col_contrast6);
     transition: filter 0.15s ease-in-out;
 }
 @mixin blue-clickable {
@@ -66,9 +65,9 @@ $prefix: "-moz-", "-webkit-", "";
     width: fit-content;
     height: fit-content;
     background: none;
-    border: 2px solid pre.$col_fg;
+    border: 2px solid vars.$col_fg;
     padding: 5px 3ch;
-    color: pre.$col_fg;
+    color: vars.$col_fg;
     border-radius: 1rem;
     margin: auto auto;
     text-decoration: none;

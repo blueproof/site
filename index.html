@@ -12,6 +12,7 @@
     <script src="js/lib/lax.js" defer></script>
     <script src="js/scrollAnims.js" defer></script>
     <script src="js/carousel.js" defer></script>
+    <script src="js/scroll.js" defer></script>
 
     <title>Blueproof</title>
 </head>
@@ -19,19 +20,19 @@
 <body>
     <nav class="main-nav">
         <div class="left">
-            <a href="#"><img src="res/logo/logo-condensed.svg" alt="Blueproof logo in condensed form"
+            <a href="/"><img src="res/logo/logo-condensed.svg" alt="Blueproof logo in condensed form"
                     class="nav-logo" /></a>
         </div>
         <div class="right">
             <ul>
-                <li><a href="#what-we-do">What we do</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#story">Story</a></li>
+                <li><a onclick="scrollToEl('what-we-do')">What we do</a></li>
+                <li><a onclick="scrollToEl('projects')">Projects</a></li>
+                <li><a onclick="scrollToEl('contact')">Contact</a></li>
+                <li><a onclick="scrollToEl('story')">Story</a></li>
             </ul>
         </div>
     </nav>
-    <section class="hero">
+    <div class="hero">
         <div class="logo" id="hero-logo">
             <svg id="eu2jYfwMaZg1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                 viewBox="0 0 400 42.63479" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
@@ -164,187 +165,201 @@
             </svg>
         </div>
         <h2 class="stl" id="hero-stl">Where programming meets design.</h2>
-    </section>
-
-    <section class="what-we-do" id="what-we-do">
-        <div class="content title-l-r">
-            <h1 class="title">What we do.</h1>
-            <p class="left">
-                BlueProof is a website-building agency that focuses on incorporating ingenius programming with
-                sophisticated design. We take pride in creating beautiful websites with a range of impressive gadgets
-                capable of blowing viewers’ minds. We have experience in building anything from simple portfolios to
-                embedded walk-through 3D models, however if you have something more specific or unusual in mind, please
-                let us know. So, if you want to be the owner of the next trendy website, please get in touch and we’ll
-                take it from there.
-            </p>
-            <div class="feature-grid right">
-                <div class="feature">
-                    <img src="res/icons/Animation.svg" class="image">
-                    <h2 class="name">ANIMATION</h2>
-                </div>
-                <div class="feature">
-                    <img src="res/icons/3D modelling.svg" class="image">
-                    <h2 class="name">3D MODELLING</h2>
-                </div>
-                <div class="feature">
-                    <img src="res/icons/SEO.svg" class="image">
-                    <h2 class="name">SEO</h2>
-                </div>
-                <div class="feature">
-                    <img src="res/icons/Analytics.svg" class="image">
-                    <h2 class="name">ANALYTICS</h2>
-                </div>
-                <div class="feature">
-                    <img src="res/icons/E-commerce.svg" class="image">
-                    <h2 class="name">E-COMMERCE</h2>
-                </div>
-                <div class="feature">
-                    <img src="res/icons/Maintenance.svg" class="image">
-                    <h2 class="name">MAINTENANCE</h2>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="projects" id="projects">
-        <div class="content">
-            <h1>Projects.</h1>
-            <div id="projects-carousel" class="carousel content" data-active-index="0">
-                <div class="carousel-items">
-                    <div class="carousel-item">
-                        <div class="project">
-                            <div class="image">
-                                <img alt="A screenshot of the Joe Fenwick-Wilson website viewed on a laptop"
-                                    class="laptop" src="res/projects/jfw_laptop.png" />
-                                <img alt="A screenshot of the Joe Fenwick-Wilson website viewed on a mobile phone"
-                                    class="mobile" src="res/projects/jfw_mobile.png" />
-                            </div>
-                            <h2 class="name">Joe Fenwick-Wilson</h2>
-                            <div class="text">
-                                <p class="quote">
-                                    BlueProof are a multitalented, incredibly professional service. They worked
-                                    closely with me to create animations, take photographs of my artworks and helped me
-                                    to
-                                    find the right words to communicate important information to my clients. I couldn’t
-                                    recommend them more, not only for their friendly and serious approach but also for
-                                    the
-                                    support they offered post-launch.
-                                </p>
-                                <p class="author">
-                                    ~ Joe Fenwick-Wilson, Artist
-                                </p>
-                            </div>
-                            <a class="view" href="https://www.joefenwickwilson.co.uk/" target="_blank">View</a>
-                        </div>
+    </div>
+    <div class="sections">
+        <section class="what-we-do" id="what-we-do">
+            <div class="content title-l-r">
+                <h1 class="title">What we do.</h1>
+                <p class="left">
+                    BlueProof is a website-building agency that focuses on incorporating ingenius programming with
+                    sophisticated design. We take pride in creating beautiful websites with a range of impressive
+                    gadgets
+                    capable of blowing viewers’ minds. We have experience in building anything from simple portfolios to
+                    embedded walk-through 3D models, however if you have something more specific or unusual in mind,
+                    please
+                    let us know. So, if you want to be the owner of the next trendy website, please get in touch and
+                    we’ll
+                    take it from there.
+                </p>
+                <div class="feature-grid right">
+                    <div class="feature">
+                        <img src="res/icons/Animation.svg" class="image">
+                        <h2 class="name">ANIMATION</h2>
                     </div>
-                    <div class="carousel-item">
-                        <div class="project">
-                            <div class="image">
-                                <img alt="A screenshot of the May Week Mega Event website viewed on a laptop"
-                                    class="laptop" src="res/projects/mwme_laptop.png" />
-                                <img alt="A screenshot of the May Week Mega Event website viewed on a mobile phone"
-                                    class="mobile" src="res/projects/mwme_mobile.png" />
-                            </div>
-                            <h2 class="name">May Week Mega Event</h2>
-                            <div class="text">
-                                <p class="quote">
-                                    The team were an absolute pleasure to work with throughout the process - both as
-                                    collaborators and as creatives. They were consistently responsive to all our
-                                    requests
-                                    and provided many excellent suggestions of their own, turning our vision into a
-                                    reality.
-                                    Couldn't recommend BlueProof more highly!
-                                </p>
-                                <p class="author">
-                                    ~ George Rosenfeld, President
-                                </p>
-                            </div>
-                            <a hidden class="view" href="https://www.mwme.com" target="_blank">View</a>
-                        </div>
+                    <div class="feature">
+                        <img src="res/icons/3D modelling.svg" class="image">
+                        <h2 class="name">3D MODELLING</h2>
                     </div>
-                    <div class="carousel-item">
-                        <div class="project">
-                            <div class="image">
-                                <img alt="A screenshot of the Jesus May Ball website viewed on a laptop" class="laptop"
-                                    src="res/projects/jmb_laptop.png" />
-                                <img alt="A screenshot of the Jesus May Ball website viewed on a mobile phone"
-                                    class="mobile" src="res/projects/jmb_mobile.png" />
-                            </div>
-                            <h2 class="name">Jesus May Ball 2022 - Taking Flight</h2>
-                            <div class="text">
-                                <p class="quote">
-                                    ______
-                                </p>
-                                <p class="author">
-                                    ~ Rohit Kale, President
-                                </p>
-                            </div>
-                            <a class="view" href="https://www.jesusmayball.com" target="_blank">View</a>
-                        </div>
+                    <div class="feature">
+                        <img src="res/icons/SEO.svg" class="image">
+                        <h2 class="name">SEO</h2>
+                    </div>
+                    <div class="feature">
+                        <img src="res/icons/Analytics.svg" class="image">
+                        <h2 class="name">ANALYTICS</h2>
+                    </div>
+                    <div class="feature">
+                        <img src="res/icons/E-commerce.svg" class="image">
+                        <h2 class="name">E-COMMERCE</h2>
+                    </div>
+                    <div class="feature">
+                        <img src="res/icons/Maintenance.svg" class="image">
+                        <h2 class="name">MAINTENANCE</h2>
                     </div>
                 </div>
-                <button class="left carousel-btn" data-dir="left" data-for="projects-carousel">
-                    <img class="arrow" src="res/icons/arrow_l.png" />
-                </button>
-                <button class="right carousel-btn" data-dir="right" data-for="projects-carousel">
-                    <img class="arrow" src="res/icons/arrow_r.png" />
-                </button>
             </div>
-        </div>
-    </section>
-    <section class="contact" id="contact">
-        <div class="title-l-r content">
-            <h1 class="title">Enquire.</h1>
-            <p class="left">
-                If you would like to get a quotation, discuss a project with us, or just find out a little more about
-                what
-                we do, then please fill in the form and we will get back to you within 48 hours.
-            </p>
-            <form id="contact-form" class="contact-form right" action="javascript:submitContactForm()">
-                <div class="form-group">
-                    <label for="name">Name: </label>
-                    <input type="text" name="name" id="contact-form-name" required>
+        </section>
+        <section class="projects" id="projects">
+            <div class="content title-c">
+                <h1>Projects.</h1>
+                <div id="projects-carousel" class="carousel content" data-active-index="0">
+                    <div class="carousel-items">
+                        <div class="carousel-item">
+                            <div class="project">
+                                <div class="image">
+                                    <img alt="A screenshot of the Joe Fenwick-Wilson website viewed on a laptop"
+                                        class="laptop" src="res/projects/jfw_laptop.png" />
+                                    <img alt="A screenshot of the Joe Fenwick-Wilson website viewed on a mobile phone"
+                                        class="mobile" src="res/projects/jfw_mobile.png" />
+                                </div>
+                                <h2 class="name">Joe Fenwick-Wilson</h2>
+                                <div class="text">
+                                    <p class="quote">
+                                        BlueProof are a multitalented, incredibly professional service. They worked
+                                        closely with me to create animations, take photographs of my artworks and helped
+                                        me
+                                        to
+                                        find the right words to communicate important information to my clients. I
+                                        couldn’t
+                                        recommend them more, not only for their friendly and serious approach but also
+                                        for
+                                        the
+                                        support they offered post-launch.
+                                    </p>
+                                    <p class="author">
+                                        ~ Joe Fenwick-Wilson, Artist
+                                    </p>
+                                    <a class="view" href="https://www.joefenwickwilson.co.uk/" target="_blank">View</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="project">
+                                <div class="image">
+                                    <img alt="A screenshot of the May Week Mega Event website viewed on a laptop"
+                                        class="laptop" src="res/projects/mwme_laptop.png" />
+                                    <img alt="A screenshot of the May Week Mega Event website viewed on a mobile phone"
+                                        class="mobile" src="res/projects/mwme_mobile.png" />
+                                </div>
+                                <h2 class="name">May Week Mega Event</h2>
+                                <div class="text">
+                                    <p class="quote">
+                                        The team were an absolute pleasure to work with throughout the process - both as
+                                        collaborators and as creatives. They were consistently responsive to all our
+                                        requests
+                                        and provided many excellent suggestions of their own, turning our vision into a
+                                        reality.
+                                        Couldn't recommend BlueProof more highly!
+                                    </p>
+                                    <p class="author">
+                                        ~ George Rosenfeld, President
+                                    </p>
+                                    <a hidden class="view" href="https://www.mwme.com" target="_blank">View</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="project">
+                                <div class="image">
+                                    <img alt="A screenshot of the Jesus May Ball website viewed on a laptop"
+                                        class="laptop" src="res/projects/jmb_laptop.png" />
+                                    <img alt="A screenshot of the Jesus May Ball website viewed on a mobile phone"
+                                        class="mobile" src="res/projects/jmb_mobile.png" />
+                                </div>
+                                <h2 class="name">Jesus May Ball 2022 - Taking Flight</h2>
+                                <div class="text">
+                                    <p class="quote">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis corrupti neque
+                                        facere ipsum beatae harum itaque distinctio ad quos reiciendis animi dicta,
+                                        magnam
+                                        quis eius commodi, sed tempore molestiae provident.
+                                    </p>
+                                    <p class="author">
+                                        ~ Rohit Kale, President
+                                    </p>
+                                    <a class="view" href="https://www.jesusmayball.com" target="_blank">View</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="left carousel-btn" data-dir="left" data-for="projects-carousel">
+                        <img class="arrow" src="res/icons/arrow_l.png" />
+                    </button>
+                    <button class="right carousel-btn" data-dir="right" data-for="projects-carousel">
+                        <img class="arrow" src="res/icons/arrow_r.png" />
+                    </button>
                 </div>
-                <div class="form-group">
-                    <label for="name">Budget: </label>
-                    <select form="contact-form" name="budget" id="contact-form-budget">
-                        <option value="a" selected>A</option>
-                        <option value="b">B</option>
-                        <option value="c">C</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="description">Describe your project:</label>
-                    <textarea form="contact-form" name="description" id="contact-form-description" rows="5"
-                        required></textarea>
-                </div>
-                <button class="submit">
-                    submit
-                </button>
-            </form>
-        </div>
-    </section>
-    <section class="story" id="story">
-        <div class="title-r-l content">
-            <h1 class="title">Our story.</h1>
-            <div class="right">
-                <p>
-                    We first met whilst studying at Jesus College, Cambridge. Our first experience of working together
-                    was for the 2022 Jesus May Ball, for which we were both on the organising committee. We were
-                    primarily in charge of creating a graphic scheme and building a website for the event; this turned
-                    out to be the start of a fruitful friendship and professional relationship.
-                </p>
-                <p>
-                    Our joint passions for distinguished design and ingenious programming led to the creation of
-                    BlueProof, an agency striving to combine our skills to create elegantly innovative websites for our
-                    clients.
-                </p>
-                <p>
-                    If you would like to discuss a project with us, please do not hesitate to get in touch.
-                </p>
             </div>
-            <img src="res/images/max_and_rafi.jpg" class="left story-img" alt="Max and Rafi working at a desk" />
-        </div>
-    </section>
+        </section>
+        <section class="contact" id="contact">
+            <div class="title-l-r content">
+                <h1 class="title">Enquire.</h1>
+                <p class="left">
+                    If you would like to get a quotation, discuss a project with us, or just find out a little more
+                    about
+                    what
+                    we do, then please fill in the form and we will get back to you within 48 hours.
+                </p>
+                <form id="contact-form" class="contact-form right" action="javascript:submitContactForm()">
+                    <div class="form-group">
+                        <label for="name">Name: </label>
+                        <input type="text" name="name" id="contact-form-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Budget: </label>
+                        <select form="contact-form" name="budget" id="contact-form-budget">
+                            <option value="a" selected>A</option>
+                            <option value="b">B</option>
+                            <option value="c">C</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Describe your project:</label>
+                        <textarea form="contact-form" name="description" id="contact-form-description" rows="5"
+                            required></textarea>
+                    </div>
+                    <button class="submit">
+                        submit
+                    </button>
+                </form>
+            </div>
+        </section>
+        <section class="story" id="story">
+            <div class="title-r-l content">
+                <h1 class="title">Our story.</h1>
+                <div class="right">
+                    <p>
+                        We first met whilst studying at Jesus College, Cambridge. Our first experience of working
+                        together
+                        was for the 2022 Jesus May Ball, for which we were both on the organising committee. We were
+                        primarily in charge of creating a graphic scheme and building a website for the event; this
+                        turned
+                        out to be the start of a fruitful friendship and professional relationship.
+                    </p>
+                    <p>
+                        Our joint passions for distinguished design and ingenious programming led to the creation of
+                        BlueProof, an agency striving to combine our skills to create elegantly innovative websites for
+                        our
+                        clients.
+                    </p>
+                    <p>
+                        If you would like to discuss a project with us, please do not hesitate to get in touch.
+                    </p>
+                </div>
+                <img src="res/images/max_and_rafi.jpg" class="left story-img" alt="Max and Rafi working at a desk" />
+            </div>
+        </section>
+    </div>
 </body>
 
 </html>

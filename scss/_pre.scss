@@ -1,15 +1,9 @@
-$col_bg: #000000;
-$col_fg: #ffffff;
-$col_contrast1: #00ccff;
-$col_contrast2: #00a3ff;
-$col_contrast3: #007aff;
-$col_contrast4: #0052ff;
-$col_contrast5: #0000ff;
-$col_contrast6: #0700c4;
+@use "vars";
+@use "mixins";
 
 body {
-    background: $col_bg;
-    color: $col_fg;
+    background: vars.$col_bg;
+    color: vars.$col_fg;
     overscroll-behavior: none;
     width: 100vw;
     overflow-x: hidden;
@@ -28,7 +22,12 @@ h6 {
     letter-spacing: 3px;
     margin: 0;
 }
+
 p {
-    text-align: justify;
-    font-size: 5mm;
+    text-align: left;
+    font-size: 4.5mm;
+    @include mixins.breakpoint(desktop) {
+        text-align: justify;
+        font-size: 5mm;
+    }
 }
