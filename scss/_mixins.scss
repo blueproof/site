@@ -1,0 +1,88 @@
+@use "pre";
+
+$prefix: "-moz-", "-webkit-", "";
+
+@mixin keyframes($name) {
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+
+    @-moz-keyframes #{$name} {
+        @content;
+    }
+
+    @keyframes #{$name} {
+        @content;
+    }
+}
+
+@include keyframes(fadeIn) {
+    0% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+@mixin fadeIn($duration, $delay: "0s") {
+    @each $p in $prefix {
+        #{$p}animation-name: fadeIn;
+        #{$p}animation-duration: $duration;
+        #{$p}animation-delay: $delay;
+        #{$p}animation-timing-function: ease-in;
+        #{$p}animation-fill-mode: backwards;
+    }
+}
+
+@mixin blue-text-shadow {
+    text-shadow: 0 1px 0 pre.$col_contrast1, 0 2px 0 pre.$col_contrast2,
+        0 3px 0 pre.$col_contrast3, 0 4px 0 pre.$col_contrast4,
+        0 5px 0 pre.$col_contrast5, 0 6px 0 pre.$col_contrast6;
+    transition: text-shadow 0.15s ease-in-out;
+}
+@mixin blue-drop-shadow {
+    filter: drop-shadow(0 0.35px 0 pre.$col_contrast1)
+        drop-shadow(0 0.7px 0 pre.$col_contrast2)
+        drop-shadow(0 1.05px 0 pre.$col_contrast3)
+        drop-shadow(0 1.4px 0 pre.$col_contrast4)
+        drop-shadow(0 1.75px 0 pre.$col_contrast5)
+        drop-shadow(0 2.1px 0 pre.$col_contrast6);
+    transition: filter 0.15s ease-in-out;
+}
+@mixin blue-clickable {
+    filter: none;
+    transform: none;
+    cursor: pointer;
+    &:hover,
+    &:focus {
+        @include blue-drop-shadow;
+    }
+    &:active {
+        transform: scale(1.04);
+    }
+}
+
+@mixin button-style {
+    width: fit-content;
+    height: fit-content;
+    background: none;
+    border: 2px solid pre.$col_fg;
+    padding: 5px 3ch;
+    color: pre.$col_fg;
+    border-radius: 1rem;
+    margin: auto auto;
+    text-decoration: none;
+    @include blue-clickable;
+}
+
+@mixin breakpoint($point) {
+    @if $point == desktop {
+        @media (min-width: 1200px) {
+            @content;
+        }
+    } @else if $point == mobile {
+        @media (max-width: 1200px) {
+            @content;
+        }
+    }
+}

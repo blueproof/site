@@ -1,0 +1,330 @@
+@use "pre";
+@use "mixins";
+
+section {
+    width: min(90vw, 1300px);
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 3vw;
+    > .content {
+        width: 100%;
+    }
+}
+
+section + section {
+    padding-top: 30vh;
+}
+
+@include mixins.breakpoint(desktop) {
+    section {
+        padding: 0 auto;
+        // height: 100vh;
+    }
+    section + section {
+        padding-top: 30vh;
+    }
+}
+
+.hero {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2vh;
+    .logo {
+        width: 80%;
+        margin-top: 30vh;
+        padding-top: 2vh;
+    }
+    .stl {
+        @include mixins.fadeIn(1s, 1s);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 8mm;
+        text-align: center;
+    }
+}
+
+.main-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    font-size: 6mm;
+    letter-spacing: 1mm;
+    z-index: 10;
+    .right {
+        margin-left: auto;
+    }
+    .left {
+        img {
+            height: 1.5em;
+        }
+    }
+    ul {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+
+        li {
+            position: relative;
+            a {
+                color: pre.$col_fg;
+                text-decoration: none;
+            }
+            & + li::before {
+                content: "|";
+                position: absolute;
+                left: -0.9em;
+            }
+            &:hover a {
+                @include mixins.blue-text-shadow;
+            }
+        }
+    }
+}
+
+.title-l-r,
+.title-r-l {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    height: min-content;
+
+    .title {
+        grid-area: header;
+        margin: 0;
+    }
+    .left {
+        grid-area: left;
+        margin: 0;
+    }
+    .right {
+        grid-area: right;
+    }
+}
+.title-l-r {
+    grid-template-areas:
+        "header"
+        "left"
+        "right";
+}
+.title-r-l {
+    grid-template-areas:
+        "header"
+        "right"
+        "left";
+}
+
+@include mixins.breakpoint(desktop) {
+    .title-l-r,
+    .title-r-l {
+        grid-template-rows: auto 1fr;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem 3rem;
+    }
+    .title-l-r {
+        grid-template-areas:
+            "header right"
+            "left right";
+    }
+    .title-r-l {
+        grid-template-areas:
+            "left header"
+            "left right";
+    }
+}
+
+.what-we-do {
+    .feature-grid {
+        display: grid;
+        height: 100%;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+
+        gap: 3rem 0;
+        .feature {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            .image {
+                height: 3rem;
+            }
+            .name {
+                font-size: 0.6rem;
+            }
+        }
+
+        @include mixins.breakpoint(desktop) {
+            gap: 2rem;
+
+            .feature {
+                .image {
+                    height: 3rem;
+                }
+                .name {
+                    margin: none;
+                    font-size: 0.8rem;
+                }
+            }
+        }
+    }
+}
+
+.projects {
+    .carousel {
+        width: min(100%, 1200px);
+        margin: auto;
+    }
+
+    .project {
+        width: 100%;
+        display: grid;
+
+        grid-template-columns: auto;
+        grid-template-rows: auto 20vh auto auto;
+        grid-template-areas: "heading" "image" "text" "button";
+
+        @include mixins.breakpoint(desktop) {
+            grid-template-columns: 3fr 2fr;
+            grid-template-rows: auto auto auto;
+            grid-template-areas:
+                "image heading"
+                "image text"
+                "image button";
+        }
+
+        .image {
+            grid-area: image;
+            position: relative;
+            .laptop {
+                position: absolute;
+                width: 80%;
+                left: 0;
+            }
+            .mobile {
+                position: absolute;
+                width: 30%;
+                right: 5%;
+                top: 20%;
+            }
+        }
+        .name {
+            grid-area: heading;
+        }
+        .text {
+            grid-area: text;
+            .quote {
+                font-size: 5mm;
+                font-style: italic;
+            }
+            .author {
+                float: right;
+            }
+        }
+        .view {
+            grid-area: button;
+            @include mixins.button-style;
+            width: fit-content;
+            height: fit-content;
+            background: none;
+            border: 2px solid pre.$col_fg;
+            padding: 5px 3ch;
+            color: pre.$col_fg;
+            border-radius: 1rem;
+            margin: auto auto;
+
+            @include mixins.blue-clickable;
+        }
+    }
+}
+
+.carousel {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: 1fr;
+    grid-template-areas: "left content right";
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    .carousel-items {
+        grid-area: content;
+        width: 100%;
+        height: 100%;
+        .carousel-item {
+            visibility: hidden;
+            display: none;
+        }
+        .carousel-item[data-active="true"] {
+            visibility: visible;
+            display: block;
+            height: auto;
+        }
+    }
+
+    .carousel-btn {
+        border: none;
+        background: none;
+        .arrow {
+            height: 1.5rem;
+            &:hover,
+            &:focus {
+                filter: brightness(0.8);
+            }
+            &:active {
+                filter: brightness(0.9);
+            }
+            @include mixins.blue-clickable;
+        }
+        &.left {
+            grid-area: left;
+        }
+        &.right {
+            grid-area: right;
+        }
+    }
+}
+
+.contact-form {
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+        margin-bottom: 1rem;
+    }
+
+    input,
+    select,
+    textarea {
+        color: white;
+        background: none;
+        padding: 0.5rem 1rem;
+        border: 2px solid white;
+        border-radius: 1rem;
+        resize: none;
+
+        &:focus-within {
+            outline: pre.$col_contrast1 auto 1px;
+        }
+    }
+
+    .submit {
+        @include mixins.button-style;
+    }
+}
+
+.story {
+    .story-img {
+        width: 100%;
+    }
+}
