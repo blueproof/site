@@ -47,12 +47,13 @@ h6 {
 
 p {
   text-align: left;
-  font-size: 4.5mm;
+  font-size: 4mm;
+  letter-spacing: 0.5mm;
 }
 @media (min-width: 1200px) {
   p {
     text-align: justify;
-    font-size: 5mm;
+    font-size: 4.5mm;
   }
 }
 
@@ -65,7 +66,22 @@ p {
   gap: 2vh;
 }
 .hero .logo {
-  width: 80%;
+  -moz-animation-name: fadeIn;
+  -moz-animation-duration: 0.5s;
+  -moz-animation-delay: 0s;
+  -moz-animation-timing-function: ease-in;
+  -moz-animation-fill-mode: backwards;
+  -webkit-animation-name: fadeIn;
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-delay: 0s;
+  -webkit-animation-timing-function: ease-in;
+  -webkit-animation-fill-mode: backwards;
+  animation-name: fadeIn;
+  animation-duration: 0.5s;
+  animation-delay: 0s;
+  animation-timing-function: ease-in;
+  animation-fill-mode: backwards;
+  width: 60%;
   margin-top: 30vh;
   padding-top: 2vh;
 }
@@ -85,8 +101,8 @@ p {
   animation-delay: 1s;
   animation-timing-function: ease-in;
   animation-fill-mode: backwards;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 8mm;
+  font-family: Arial, sans-serif;
+  font-size: 5mm;
   text-align: center;
 }
 
@@ -128,8 +144,8 @@ p {
   left: -0.9em;
 }
 .main-nav ul li:hover a {
-  text-shadow: 0 1px 0 #00ccff, 0 2px 0 #00a3ff, 0 3px 0 #007aff, 0 4px 0 #0052ff, 0 5px 0 #0000ff, 0 6px 0 #0700c4;
-  transition: text-shadow 0.15s ease-in-out;
+  filter: drop-shadow(0 1px 0 #00ccff) drop-shadow(0 0.7px 0 #00a3ff) drop-shadow(0 1.05px 0 #007aff) drop-shadow(0 1.4px 0 #0052ff) drop-shadow(0 1.75px 0 #0000ff) drop-shadow(0 2.1px 0 #0700c4);
+  transition: filter 0.15s ease-in-out;
 }
 
 .sections {
@@ -303,7 +319,7 @@ section {
   cursor: pointer;
 }
 .projects .project .text .view:hover, .projects .project .text .view:focus {
-  filter: drop-shadow(0 0.35px 0 #00ccff) drop-shadow(0 0.7px 0 #00a3ff) drop-shadow(0 1.05px 0 #007aff) drop-shadow(0 1.4px 0 #0052ff) drop-shadow(0 1.75px 0 #0000ff) drop-shadow(0 2.1px 0 #0700c4);
+  filter: drop-shadow(0 1px 0 #00ccff) drop-shadow(0 0.7px 0 #00a3ff) drop-shadow(0 1.05px 0 #007aff) drop-shadow(0 1.4px 0 #0052ff) drop-shadow(0 1.75px 0 #0000ff) drop-shadow(0 2.1px 0 #0700c4);
   transition: filter 0.15s ease-in-out;
 }
 .projects .project .text .view:active {
@@ -350,7 +366,7 @@ section {
   filter: brightness(0.9);
 }
 .carousel .carousel-btn .arrow:hover, .carousel .carousel-btn .arrow:focus {
-  filter: drop-shadow(0 0.35px 0 #00ccff) drop-shadow(0 0.7px 0 #00a3ff) drop-shadow(0 1.05px 0 #007aff) drop-shadow(0 1.4px 0 #0052ff) drop-shadow(0 1.75px 0 #0000ff) drop-shadow(0 2.1px 0 #0700c4);
+  filter: drop-shadow(0 1px 0 #00ccff) drop-shadow(0 0.7px 0 #00a3ff) drop-shadow(0 1.05px 0 #007aff) drop-shadow(0 1.4px 0 #0052ff) drop-shadow(0 1.75px 0 #0000ff) drop-shadow(0 2.1px 0 #0700c4);
   transition: filter 0.15s ease-in-out;
 }
 .carousel .carousel-btn .arrow:active {
@@ -399,7 +415,7 @@ section {
   cursor: pointer;
 }
 .contact-form .submit:hover, .contact-form .submit:focus {
-  filter: drop-shadow(0 0.35px 0 #00ccff) drop-shadow(0 0.7px 0 #00a3ff) drop-shadow(0 1.05px 0 #007aff) drop-shadow(0 1.4px 0 #0052ff) drop-shadow(0 1.75px 0 #0000ff) drop-shadow(0 2.1px 0 #0700c4);
+  filter: drop-shadow(0 1px 0 #00ccff) drop-shadow(0 0.7px 0 #00a3ff) drop-shadow(0 1.05px 0 #007aff) drop-shadow(0 1.4px 0 #0052ff) drop-shadow(0 1.75px 0 #0000ff) drop-shadow(0 2.1px 0 #0700c4);
   transition: filter 0.15s ease-in-out;
 }
 .contact-form .submit:active {

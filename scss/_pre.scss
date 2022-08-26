@@ -25,9 +25,10 @@ h6 {
 
 p {
     text-align: left;
-    font-size: 4.5mm;
+    font-size: 4mm;
     @include mixins.breakpoint(desktop) {
         text-align: justify;
-        font-size: 5mm;
+        font-size: 4.5mm;
     }
+    letter-spacing: 0.5mm;
 }

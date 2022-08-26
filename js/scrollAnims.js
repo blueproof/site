@@ -38,7 +38,7 @@ window.addEventListener("load", function () {
             ],
             "letter-spacing": [
                 [0, `${endPos}`],
-                [5, 15],
+                [10, 12],
                 {
                     cssFn: (val) => `${val}px`
                 }
