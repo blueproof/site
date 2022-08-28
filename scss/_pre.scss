@@ -1,6 +1,8 @@
 @use "vars";
 @use "mixins";
 
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap");
+
 body {
     background: vars.$col_bg;
     color: vars.$col_fg;
@@ -17,9 +19,12 @@ h4,
 h5,
 h6 {
     text-align: left;
-    font-family: Helvetica, sans-serif;
+    font-family: "Nunito", sans-serif;
     font-weight: bold;
-    letter-spacing: 3px;
+    letter-spacing: 0.8mm;
+    @include mixins.breakpoint(desktop) {
+        letter-spacing: 1.5mm;
+    }
     margin: 0;
 }
 
@@ -30,5 +35,5 @@ p {
         text-align: justify;
         font-size: 4.5mm;
     }
-    letter-spacing: 0.5mm;
+    letter-spacing: 0.7mm;
 }

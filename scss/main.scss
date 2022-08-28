@@ -10,15 +10,23 @@
     align-items: center;
     gap: 2vh;
     .logo {
+        width: 85%;
         @include mixins.fadeIn(0.5s, 0s);
-        width: 60%;
+        @include mixins.breakpoint(desktop) {
+            width: 60%;
+        }
         margin-top: 30vh;
         padding-top: 2vh;
     }
     .stl {
         @include mixins.fadeIn(1s, 1s);
         font-family: Arial, sans-serif;
-        font-size: 5mm;
+        width: 70%;
+        font-size: 4mm;
+        letter-spacing: 2mm;
+        @include mixins.breakpoint(desktop) {
+            font-size: 4.5mm;
+        }
         text-align: center;
     }
 }
@@ -30,7 +38,7 @@
     padding: 0 1rem;
     display: grid;
     grid-template-columns: auto 1fr;
-    align-items: center;
+    align-items: flex-start;
     font-size: 5mm;
     letter-spacing: 1mm;
     z-index: 10;
@@ -38,31 +46,90 @@
         margin-left: auto;
     }
     .left {
+        margin-top: 1rem;
         img {
-            height: 1.5em;
+            height: 2rem;
         }
     }
-    ul {
-        list-style: none;
-        display: flex;
-        flex-direction: row;
-        gap: 2rem;
 
+    // margin-top: 1rem;
+
+    #nav-items {
+        display: none;
+        list-style: none;
+        margin: 0;
+        flex-direction: column;
+        gap: 2rem;
+        padding-bottom: 1rem;
         li {
             position: relative;
             a {
                 color: vars.$col_fg;
                 text-decoration: none;
                 cursor: pointer;
-            }
-            & + li::before {
-                content: "|";
-                position: absolute;
-                left: -0.9em;
+                -webkit-user-select: none; /* Safari */
+                -moz-user-select: none; /* Firefox */
+                -ms-user-select: none; /* IE10+/Edge */
+                user-select: none; /* Standard */
             }
             &:hover a {
                 @include mixins.blue-drop-shadow;
             }
+        }
+    }
+
+    .nav-toggle {
+        border: none;
+        background: none;
+        color: vars.$col_fg;
+        cursor: pointer;
+        height: 1.8rem;
+        width: 1.8rem;
+        filter: brightness(100);
+        margin: 1rem 0;
+    }
+    #nav-close {
+        float: right;
+        display: none;
+    }
+    &[data-open-mobile="true"] {
+        .right {
+            background-color: vars.$col_bg;
+            padding-bottom: 1rem;
+        }
+        align-items: flex-start;
+        #nav-items {
+            display: flex;
+            width: 100%;
+        }
+        #nav-close {
+            display: initial;
+        }
+        #nav-open {
+            display: none;
+        }
+    }
+
+    @include mixins.breakpoint(desktop) {
+        .right {
+            margin-top: 1.3rem;
+            align-self: center;
+        }
+        #nav-items {
+            display: flex;
+            flex-direction: row;
+
+            li {
+                & + li::before {
+                    content: "|";
+                    position: absolute;
+                    left: -0.9em;
+                }
+            }
+        }
+
+        .nav-toggle {
+            display: none;
         }
     }
 }
@@ -88,7 +155,6 @@ section {
     grid-template-rows: auto auto auto;
     grid-template-columns: 1fr;
     gap: 1.5rem;
-    height: min-content;
 
     .title {
         grid-area: header;
@@ -130,6 +196,10 @@ section {
         grid-template-rows: auto 1fr;
         grid-template-columns: 1fr 1fr;
         gap: 1rem 3rem;
+
+        &.f1-2 {
+            grid-template-columns: 1fr 2fr;
+        }
     }
     .title-l-r {
         grid-template-areas:
@@ -194,9 +264,8 @@ section {
     .project {
         width: 100%;
         display: grid;
-        min-height: 75vh;
         grid-template-columns: auto;
-        grid-template-rows: auto 20vh auto auto;
+        grid-template-rows: auto 40vw auto;
         grid-template-areas: "heading" "image" "text";
         justify-content: flex-start;
         @include mixins.breakpoint(desktop) {
@@ -206,6 +275,9 @@ section {
             grid-template-areas:
                 "image heading"
                 "image text";
+            .image {
+                height: 30vh;
+            }
         }
 
         .image {
@@ -229,13 +301,13 @@ section {
         .text {
             grid-area: text;
             .quote {
-                font-size: 5mm;
                 font-style: italic;
             }
             .author {
                 text-align: right;
             }
             .view {
+                display: block;
                 @include mixins.button-style;
             }
         }
@@ -248,8 +320,6 @@ section {
     grid-template-rows: 1fr;
     grid-template-areas: "left content right";
     gap: 1rem;
-    justify-content: center;
-    align-items: center;
     .carousel-items {
         grid-area: content;
         width: 100%;
@@ -268,8 +338,10 @@ section {
     .carousel-btn {
         border: none;
         background: none;
+        align-self: flex-start;
+        margin-top: 20vh;
         .arrow {
-            height: 1.5rem;
+            height: 1.2rem;
             &:hover,
             &:focus {
                 filter: brightness(0.8);
@@ -294,21 +366,40 @@ section {
         flex-direction: column;
         gap: 0.4rem;
         margin-bottom: 1rem;
+        align-items: stretch;
     }
 
     input,
     select,
     textarea {
+        width: 100%;
         color: white;
         background: none;
         padding: 0.5rem 1rem;
         border: 2px solid white;
-        border-radius: 1rem;
+        border-radius: 2rem;
         resize: none;
 
         &:focus-within {
             outline: vars.$col_contrast1 auto 1px;
         }
+    }
+    .select-div {
+        position: relative;
+        &::after {
+            content: "∨";
+            position: absolute;
+            color: rgb(173, 173, 173);
+            right: 1rem;
+            font-weight: bold;
+            top: 25%;
+        }
+    }
+    select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        position: relative;
     }
 
     .submit {
@@ -317,7 +408,25 @@ section {
 }
 
 .story {
+    .image-container {
+        position: relative;
+        &::after {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: none;
+            background: linear-gradient(
+                90deg,
+                rgba(0, 0, 0, 0) 60%,
+                rgba(0, 0, 0, 1) 100%
+            );
+        }
+    }
     .story-img {
         width: 100%;
     }
+    margin-bottom: 25vh;
 }
