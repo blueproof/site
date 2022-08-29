@@ -1,12 +1,10 @@
 window.addEventListener("load", function () {
-    lax.init(debug = true)
+    lax.init()
 
-    // Add a driver that we use to control our animations
     lax.addDriver('scrollY', function () {
         return window.scrollY
     })
 
-    // Add animation bindings to elements
     const endPos = window.innerHeight / 4;
     lax.addElements('#hero-logo', {
         scrollY: {
@@ -61,22 +59,28 @@ window.addEventListener("load", function () {
             ],
         }
     })
-    lax.addElements("section", {
-        scrollY: {
-            opacity: [
-                ["elInY", "elCenterY", "elOutY"],
-                [0, 1, 0],
-                { easing: "easeInOutQuart" }
-            ],
-            translateY: [
-                ["elInY", "elCenterY", "elOutY"],
-                [100, 0, -100],
-            ],
-            scaleY: [
-                ["elInY", "elCenterY", "elOutY"],
-                [1.2, 1, 1.2],
-                { easing: "easeInOutQuart" }
-            ]
-        }
-    })
+
+    //Desktop or tablet
+    if (!navigator.userAgent.toLowerCase().match(/mobile/i)) {
+
+        lax.addElements("section", {
+            scrollY: {
+                opacity: [
+                    ["elInY", "elCenterY", "elOutY"],
+                    [0, 1, 0],
+                    { easing: "easeInOutQuart" }
+                ],
+                translateY: [
+                    ["elInY", "elCenterY", "elOutY"],
+                    [100, 0, -100],
+                ],
+                scaleY: [
+                    ["elInY", "elCenterY", "elOutY"],
+                    [1.2, 1, 1.2],
+                    { easing: "easeInOutQuart" }
+                ]
+            }
+        })
+    }
+
 });

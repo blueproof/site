@@ -63,7 +63,7 @@ $prefix: "-moz-", "-webkit-", "";
     padding: 5px 3ch;
     color: vars.$col_fg;
     border-radius: 1rem;
-    margin: auto auto;
+    // margin: auto auto;
     text-decoration: none;
     @include blue-clickable;
 }

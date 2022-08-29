@@ -3,6 +3,28 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap");
 
+::selection {
+    $selection-col: adjust-color(
+        $color: vars.$col_contrast1,
+        $alpha: -0.5,
+    );
+    background-color: $selection-col;
+    box-shadow: 0px 0px 2px $selection-col;
+}
+
+body {
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: adjust-color(
+            $color: vars.$col_contrast1,
+            $alpha: -0.3
+        );
+        border-radius: 10px;
+    }
+}
+
 body {
     background: vars.$col_bg;
     color: vars.$col_fg;
