@@ -33,19 +33,13 @@ $prefix: "-moz-", "-webkit-", "";
     }
 }
 
-// @mixin blue-text-shadow {
-//     text-shadow: 0 1px 0 vars.$col_contrast1, 0 2px 0 vars.$col_contrast2,
-//         0 3px 0 vars.$col_contrast3, 0 4px 0 vars.$col_contrast4,
-//         0 5px 0 vars.$col_contrast5, 0 6px 0 vars.$col_contrast6;
-//     transition: text-shadow 0.15s ease-in-out;
-// }
-@mixin blue-drop-shadow {
-    filter: drop-shadow(0 1px 0 vars.$col_contrast1)
-        drop-shadow(0 0.7px 0 vars.$col_contrast2)
-        drop-shadow(0 1.05px 0 vars.$col_contrast3)
-        drop-shadow(0 1.4px 0 vars.$col_contrast4)
-        drop-shadow(0 1.75px 0 vars.$col_contrast5)
-        drop-shadow(0 2.1px 0 vars.$col_contrast6);
+@mixin blue-drop-shadow($spacing: 0.35px) {
+    filter: drop-shadow(0 ($spacing) 0 vars.$col_contrast1)
+        drop-shadow(0 ($spacing * 2) 0 vars.$col_contrast2)
+        drop-shadow(0 ($spacing * 3) 0 vars.$col_contrast3)
+        drop-shadow(0 ($spacing * 4) 0 vars.$col_contrast4)
+        drop-shadow(0 ($spacing * 5) 0 vars.$col_contrast5)
+        drop-shadow(0 ($spacing * 6) 0 vars.$col_contrast6);
     transition: filter 0.15s ease-in-out;
 }
 @mixin blue-clickable {

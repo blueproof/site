@@ -138,18 +138,20 @@ p {
   display: grid;
   grid-template-columns: auto 1fr;
   align-items: flex-start;
-  font-size: 5mm;
+  font-size: 4.5mm;
   letter-spacing: 1mm;
   z-index: 10;
 }
 .main-nav .right {
+  transform: translateX(200);
   margin-left: auto;
 }
 .main-nav .left {
+  transform: translateX(-200);
   margin-top: 1rem;
 }
 .main-nav .left img {
-  height: 2rem;
+  height: 2.5rem;
 }
 .main-nav #nav-items {
   display: none;
@@ -172,7 +174,7 @@ p {
   user-select: none; /* Standard */
 }
 .main-nav #nav-items li:hover a {
-  filter: drop-shadow(0 1px 0 #00ccff) drop-shadow(0 0.7px 0 #00a3ff) drop-shadow(0 1.05px 0 #007aff) drop-shadow(0 1.4px 0 #0052ff) drop-shadow(0 1.75px 0 #0000ff) drop-shadow(0 2.1px 0 #0700c4);
+  filter: drop-shadow(0 0.35px 0 #00ccff) drop-shadow(0 0.7px 0 #00a3ff) drop-shadow(0 1.05px 0 #007aff) drop-shadow(0 1.4px 0 #0052ff) drop-shadow(0 1.75px 0 #0000ff) drop-shadow(0 2.1px 0 #0700c4);
   transition: filter 0.15s ease-in-out;
 }
 .main-nav .nav-toggle {
@@ -218,7 +220,7 @@ p {
   .main-nav #nav-items li + li::before {
     content: "|";
     position: absolute;
-    left: -0.9em;
+    left: -1.15em;
   }
   .main-nav .nav-toggle {
     display: none;
@@ -343,7 +345,7 @@ section {
   width: 100%;
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows: auto 40vw auto;
+  grid-template-rows: auto 45vw auto;
   grid-template-areas: "heading" "image" "text";
   justify-content: flex-start;
 }
@@ -371,7 +373,7 @@ section {
   position: absolute;
   width: 30%;
   right: 5%;
-  top: 20%;
+  top: 30%;
 }
 .projects .project .name {
   grid-area: heading;
@@ -401,7 +403,7 @@ section {
   cursor: pointer;
 }
 .projects .project .text .view:hover, .projects .project .text .view:focus {
-  filter: drop-shadow(0 1px 0 #00ccff) drop-shadow(0 0.7px 0 #00a3ff) drop-shadow(0 1.05px 0 #007aff) drop-shadow(0 1.4px 0 #0052ff) drop-shadow(0 1.75px 0 #0000ff) drop-shadow(0 2.1px 0 #0700c4);
+  filter: drop-shadow(0 0.35px 0 #00ccff) drop-shadow(0 0.7px 0 #00a3ff) drop-shadow(0 1.05px 0 #007aff) drop-shadow(0 1.4px 0 #0052ff) drop-shadow(0 1.75px 0 #0000ff) drop-shadow(0 2.1px 0 #0700c4);
   transition: filter 0.15s ease-in-out;
 }
 .projects .project .text .view:active {
@@ -416,18 +418,17 @@ section {
   gap: 1rem;
 }
 .carousel .carousel-items {
-  grid-area: content;
   width: 100%;
-  height: 100%;
+  display: block;
+  grid-area: content;
 }
 .carousel .carousel-items .carousel-item {
-  visibility: hidden;
   display: none;
+  visibility: hidden;
 }
 .carousel .carousel-items .carousel-item[data-active=true] {
-  visibility: visible;
   display: block;
-  height: auto;
+  visibility: visible;
 }
 .carousel .carousel-btn {
   border: none;
@@ -448,7 +449,7 @@ section {
   filter: brightness(0.9);
 }
 .carousel .carousel-btn .arrow:hover, .carousel .carousel-btn .arrow:focus {
-  filter: drop-shadow(0 1px 0 #00ccff) drop-shadow(0 0.7px 0 #00a3ff) drop-shadow(0 1.05px 0 #007aff) drop-shadow(0 1.4px 0 #0052ff) drop-shadow(0 1.75px 0 #0000ff) drop-shadow(0 2.1px 0 #0700c4);
+  filter: drop-shadow(0 0.35px 0 #00ccff) drop-shadow(0 0.7px 0 #00a3ff) drop-shadow(0 1.05px 0 #007aff) drop-shadow(0 1.4px 0 #0052ff) drop-shadow(0 1.75px 0 #0000ff) drop-shadow(0 2.1px 0 #0700c4);
   transition: filter 0.15s ease-in-out;
 }
 .carousel .carousel-btn .arrow:active {
@@ -516,7 +517,7 @@ section {
   cursor: pointer;
 }
 .contact-form .submit:hover, .contact-form .submit:focus {
-  filter: drop-shadow(0 1px 0 #00ccff) drop-shadow(0 0.7px 0 #00a3ff) drop-shadow(0 1.05px 0 #007aff) drop-shadow(0 1.4px 0 #0052ff) drop-shadow(0 1.75px 0 #0000ff) drop-shadow(0 2.1px 0 #0700c4);
+  filter: drop-shadow(0 0.35px 0 #00ccff) drop-shadow(0 0.7px 0 #00a3ff) drop-shadow(0 1.05px 0 #007aff) drop-shadow(0 1.4px 0 #0052ff) drop-shadow(0 1.75px 0 #0000ff) drop-shadow(0 2.1px 0 #0700c4);
   transition: filter 0.15s ease-in-out;
 }
 .contact-form .submit:active {

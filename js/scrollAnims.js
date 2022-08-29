@@ -36,20 +36,20 @@ window.addEventListener("load", function () {
                 [0, `${endPos}`],
                 [0, `${endPos} - 100`],
             ],
-            // "letter-spacing": [
-            //     [0, `${endPos}`],
-            //     [10, 12],
-            //     {
-            //         cssFn: (val) => `${val}px`
-            //     }
-            // ]
+            "letter-spacing": [
+                [0, `${endPos}`],
+                [8, 9],
+                {
+                    cssFn: (val) => `${val}px`
+                }
+            ]
         }
     });
     lax.addElements('.main-nav .left', {
         scrollY: {
             translateX: [
                 [`${endPos}`, `${endPos} + 200`],
-                ["-elWidth-18", 0],
+                ["-elWidth*2", 0],
             ],
         }
     });
