@@ -19,7 +19,7 @@ window.addEventListener("load", () => {
             }
 
             const subject = `Blueproof Contact Form - ${name}`
-            const message = `Contact form message from: ${name} | ${email}\n\n${description}`
+            const message = `Contact form message from: ${name} | ${email}\n\nBudget: ${budget}\n\n${description}`
             try {
                 const response = await fetch(EMAILER_API, {
                     method: "POST",
