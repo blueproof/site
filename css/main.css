@@ -33,7 +33,7 @@ body::-webkit-scrollbar {
   width: 8px;
 }
 body::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 204, 255, 0.7);
+  background-color: #00a3ff;
   border-radius: 10px;
 }
 
@@ -147,6 +147,8 @@ p {
 .main-nav {
   position: fixed;
   top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
   width: 100%;
   padding: 0 1rem;
   display: grid;
@@ -162,7 +164,7 @@ p {
 }
 .main-nav .left {
   transform: translateX(-200);
-  margin-top: 1rem;
+  margin: 0.8rem 0;
 }
 .main-nav .left img {
   height: 2.5rem;
@@ -173,7 +175,6 @@ p {
   margin: 0;
   flex-direction: column;
   gap: 2rem;
-  padding-bottom: 1rem;
 }
 .main-nav #nav-items li {
   position: relative;
@@ -224,7 +225,6 @@ p {
 }
 @media (min-width: 1200px) {
   .main-nav .right {
-    margin-top: 1.3rem;
     align-self: center;
   }
   .main-nav #nav-items {
@@ -548,16 +548,20 @@ section {
 .story .image-container {
   position: relative;
 }
-.story .image-container::after {
-  position: absolute;
-  content: "";
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: none;
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0) 60%, rgb(0, 0, 0) 100%);
+@media (min-width: 1200px) {
+  .story .image-container::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: none;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0) 90%, rgb(0, 0, 0) 100%);
+  }
 }
 .story .story-img {
   width: 100%;
+  position: absolute;
+  bottom: 0;
 }
