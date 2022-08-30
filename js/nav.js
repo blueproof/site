@@ -7,6 +7,10 @@ window.addEventListener("load", () => {
     } else {
         document.querySelector("#nav-items").ariaHidden = "true";
     }
+
+    window.addEventListener("scroll", closeNavMobile);
+    document.querySelector("#nav-close").addEventListener("click", closeNavMobile);
+    document.querySelector("#nav-open").addEventListener("click", openNavMobile);
 })
 
 function scrollToEl(id) {
@@ -25,7 +29,8 @@ function scrollToEl(id) {
     }
 }
 
-function openNavMobile() {
+function openNavMobile(ev) {
+    ev.stopPropagation();
     if (isOpenMobile) return;
     document.querySelector("#nav-items").ariaHidden = "false";
     document.querySelector("nav").dataset.openMobile = "true";

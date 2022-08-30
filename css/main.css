@@ -147,8 +147,6 @@ p {
 .main-nav {
   position: fixed;
   top: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(5px);
   width: 100%;
   padding: 0 1rem;
   display: grid;
@@ -157,6 +155,12 @@ p {
   font-size: 4.5mm;
   letter-spacing: 1mm;
   z-index: 10;
+}
+@media (min-width: 1200px) {
+  .main-nav {
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+  }
 }
 .main-nav .right {
   transform: translateX(200);
@@ -562,6 +566,10 @@ section {
 }
 .story .story-img {
   width: 100%;
-  position: absolute;
-  bottom: 0;
+}
+@media (min-width: 1200px) {
+  .story .story-img {
+    position: absolute;
+    bottom: 0;
+  }
 }

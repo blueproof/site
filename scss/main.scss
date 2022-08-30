@@ -36,8 +36,10 @@
 .main-nav {
     position: fixed;
     top: 0;
-    background-color: adjust-color($color: vars.$col_bg, $alpha: -0.5);
-    backdrop-filter: blur(5px);
+    @include mixins.breakpoint(desktop) {
+        background-color: adjust-color($color: vars.$col_bg, $alpha: -0.5);
+        backdrop-filter: blur(5px);
+    }
     width: 100%;
     padding: 0 1rem;
     display: grid;
@@ -440,8 +442,10 @@ section {
     }
     .story-img {
         width: 100%;
-        position: absolute;
-        bottom: 0;
+        @include mixins.breakpoint(desktop) {
+            position: absolute;
+            bottom: 0;
+        }
     }
     margin-bottom: 25vh;
 }
