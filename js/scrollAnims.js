@@ -60,6 +60,8 @@ window.addEventListener("load", function () {
         }
     })
 
+
+
     //Desktop or tablet
     if (!navigator.userAgent.toLowerCase().match(/mobile/i)) {
 
@@ -83,4 +85,7 @@ window.addEventListener("load", function () {
         })
     }
 
+    this.document.querySelectorAll(".main-nav").forEach((el) => {
+        el.classList.remove("hidden");
+    })
 });

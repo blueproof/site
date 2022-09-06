@@ -82,6 +82,10 @@ p {
   }
 }
 
+.hidden {
+  display: none;
+}
+
 .hero {
   height: 100vh;
   width: 100%;
@@ -573,3 +577,5 @@ section {
     bottom: 0;
   }
 }
+
+/*# sourceMappingURL=main.css.map */
