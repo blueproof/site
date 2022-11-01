@@ -13,7 +13,9 @@ window.addEventListener("load", () => {
     document.querySelector("#nav-open").addEventListener("click", openNavMobile);
 })
 
-function scrollToEl(id) {
+function scrollToEl(event, id) {
+    event.preventDefault();
+    event.stopPropagation();
     const el = document.querySelector("#" + id);
     if (el == null) return console.error("No element found with the given id");
     const elTop = el.offsetTop;

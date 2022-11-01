@@ -45,17 +45,17 @@
         <div class="left"> <a href="/"><img src="res/logo/logo-condensed.svg" alt="small variant of the BlueProof logo"
                     class="nav-logo" /></a></div>
         <div class="right">
-            <button id="nav-close" class="nav-toggle" aria-controls="nav-list">
-                <span class="material-icons"><img src="res/icons/cross.svg" /></span>
+            <button id="nav-close" class="nav-toggle" aria-controls="nav-list" aria-label="close navigation menu">
+                <img src="res/icons/cross.svg" alt="x icon" />
             </button>
             <ul class="nav-list" id="nav-items">
-                <li><a onclick="scrollToEl('what-we-do')">what we do</a></li>
-                <li><a onclick="scrollToEl('projects')">projects</a></li>
-                <li><a onclick="scrollToEl('contact')">enquire</a></li>
-                <li><a onclick="scrollToEl('story')">our story</a></li>
+                <li><a onclick="scrollToEl(event, 'what-we-do')" href="#what-we-do">what we do</a></li>
+                <li><a onclick="scrollToEl(event, 'projects')" href="#projects">projects</a></li>
+                <li><a onclick="scrollToEl(event, 'contact')" href="#contact">enquire</a></li>
+                <li><a onclick="scrollToEl(event, 'story')" href="#story">our story</a></li>
             </ul>
-            <button id="nav-open" class="nav-toggle" aria-controls="nav-items">
-                <img src="res/icons/hamburger.svg" />
+            <button id="nav-open" class="nav-toggle" aria-controls="nav-items" aria-label="open navigation menu">
+                <img src="res/icons/hamburger.svg" alt="hamburger icon" />
             </button>
         </div>
     </nav>
@@ -203,22 +203,27 @@
                     featured online store. So, if you want to be the owner of the next trendy website, please get in
                     touch and we’ll take it from there.</p>
                 <div class="feature-grid right">
-                    <div class="feature"> <img src="res/icons/Animation.png" class="image">
+                    <div class="feature"> <img src="res/icons/Animation.png" class="image"
+                            alt="an animation of a ball bouncing">
                         <h2 class="name">ANIMATION</h2>
                     </div>
-                    <div class="feature"> <img src="res/icons/3D modelling.png" class="image">
+                    <div class="feature"> <img src="res/icons/3D modelling.png" class="image"
+                            alt="a 3D model of a house">
                         <h2 class="name">3D MODELLING</h2>
                     </div>
-                    <div class="feature"> <img src="res/icons/SEO.png" class="image">
+                    <div class="feature"> <img src="res/icons/SEO.png" class="image"
+                            alt="a magnifying glass placed over a gear">
                         <h2 class="name">SEO</h2>
                     </div>
-                    <div class="feature"> <img src="res/icons/Analytics.png" class="image">
+                    <div class="feature"> <img src="res/icons/Analytics.png" class="image"
+                            alt="a graph with an upwards trend">
                         <h2 class="name">ANALYTICS</h2>
                     </div>
-                    <div class="feature"> <img src="res/icons/E-commerce.png" class="image">
+                    <div class="feature"> <img src="res/icons/E-commerce.png" class="image"
+                            alt="a shoping trolley in front of a globe">
                         <h2 class="name">E-COMMERCE</h2>
                     </div>
-                    <div class="feature"> <img src="res/icons/Maintenance.png" class="image">
+                    <div class="feature"> <img src="res/icons/Maintenance.png" class="image" alt="a spanner">
                         <h2 class="name">MAINTENANCE</h2>
                     </div>
                 </div>
@@ -332,9 +337,14 @@
                                 </div>
                             </div>
                         </div>
-                    </div> <button class="left carousel-btn" data-dir="left" data-for="projects-carousel"> <img
-                            class="arrow" src="res/icons/arrow_l.png" /> </button> <button class="right carousel-btn"
-                        data-dir="right" data-for="projects-carousel"> <img class="arrow" src="res/icons/arrow_r.png" />
+                    </div>
+                    <button class="left carousel-btn" data-dir="left" data-for="projects-carousel"
+                        aria-label="scroll carousel left">
+                        <img class="arrow" src="res/icons/arrow_l.png" alt="left arrow" />
+                    </button>
+                    <button class="right carousel-btn" data-dir="right" data-for="projects-carousel"
+                        aria-label="scroll carousel right">
+                        <img class="arrow" src="res/icons/arrow_r.png" alt="right arrow" />
                     </button>
                 </div>
             </div>
@@ -348,15 +358,15 @@
                 </p>
                 <form id="contact-form" class="contact-form right">
                     <div class="form-group">
-                        <label for="name">Name: </label>
+                        <label for="contact-form-name">Name: </label>
                         <input type="text" name="name" id="contact-form-name" required>
                     </div>
                     <div class="form-group">
-                        <label for="email">Email: </label>
+                        <label for="contact-form-email">Email: </label>
                         <input type="email" name="email" id="contact-form-email" required>
                     </div>
                     <div class="form-group">
-                        <label for="budget">Budget: </label>
+                        <label for="contact-form-budget">Budget: </label>
                         <div class="select-div">
                             <select form="contact-form" name="budget" id="contact-form-budget" required>
                                 <option disabled selected value>See options...</option>
@@ -369,7 +379,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="description">Describe your project:</label>
+                        <label for="contact-form-description">Describe your project:</label>
                         <textarea form="contact-form" name="description" id="contact-form-description" rows="5"
                             required></textarea>
                     </div>
