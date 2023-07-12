@@ -13,15 +13,13 @@ jobs:
     deploy:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkouts@main
-            # - run: "npm install"
-            # - run: "npm run build"
+            - uses: actions/checkout@master
+            - run: npm install
+            - run: npm run build
             - name: configure aws credentials
               uses: aws-actions/configure-aws-credentials@v1.7.0
               with:
                   role-to-assume: ${{ secrets.AWS_IDENTITY }}
                   role-session-name: GitHub_to_AWS_via_FederatedOIDC
                   aws-region: ${{ secrets.AWS_REGION }}
-            - name: Sts GetCallerIdentity
-              run: |
-                  aws s3 sync build s3://www.blueproof.online --delete
+            - run: aws s3 sync build s3://www.blueproof.online --delete
