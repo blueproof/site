@@ -3,7 +3,7 @@ name: Build and deploy site to AWS S3 bucket
 on:
     push:
         branches:
-            - master
+            - main
 
 jobs:
     deploy:
