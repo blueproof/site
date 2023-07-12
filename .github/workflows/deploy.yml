@@ -5,13 +5,17 @@ on:
         branches:
             - main
 
+permissions:
+    id-token: write
+    contents: read
+
 jobs:
     deploy:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@master
-            - run: "npm install"
-            - run: "npm run build"
+            # - uses: actions/checkout@master
+            # - run: "npm install"
+            # - run: "npm run build"
             - name: configure aws credentials
               uses: aws-actions/configure-aws-credentials@v1.7.0
               with:
