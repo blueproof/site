@@ -89,6 +89,7 @@ p {
 .hero {
   height: 100vh;
   width: 100%;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -146,6 +147,28 @@ p {
   .hero .stl {
     font-size: 4.5mm;
   }
+}
+.hero .down-arrow {
+  -moz-animation-name: fadeIn;
+  -moz-animation-duration: 1s;
+  -moz-animation-delay: 3s;
+  -moz-animation-timing-function: ease-in;
+  -moz-animation-fill-mode: backwards;
+  -webkit-animation-name: fadeIn;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-delay: 3s;
+  -webkit-animation-timing-function: ease-in;
+  -webkit-animation-fill-mode: backwards;
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-delay: 3s;
+  animation-timing-function: ease-in;
+  animation-fill-mode: backwards;
+  position: absolute;
+  font-size: 6mm;
+  color: white;
+  text-decoration: none;
+  bottom: 15vh;
 }
 
 .main-nav {

@@ -43,6 +43,21 @@ window.addEventListener("load", function () {
             ]
         }
     });
+    lax.addElements('#hero-down-arrow', {
+        scrollY: {
+            opacity: [
+                [0, `${endPos}`],
+                [1, 0],
+                {
+                    easing: "ease-in"
+                }
+            ],
+            translateY: [
+                [0, `${endPos}`],
+                [0, `${endPos} - 100`],
+            ],
+        }
+    });
     lax.addElements('.main-nav .left', {
         scrollY: {
             translateX: [
