@@ -13,7 +13,7 @@ jobs:
     deploy:
         runs-on: ubuntu-latest
         steps:
-            # - uses: actions/checkout@master
+            - uses: actions/checkouts@master
             # - run: "npm install"
             # - run: "npm run build"
             - name: configure aws credentials
@@ -24,4 +24,4 @@ jobs:
                   aws-region: ${{ secrets.AWS_REGION }}
             - name: Sts GetCallerIdentity
               run: |
-                  aws sts get-caller-identity
+                  aws s3 sync build s3://www.blueproof.online --delete
