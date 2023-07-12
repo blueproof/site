@@ -1,0 +1,13 @@
+{
+    "devDependencies": {
+        "reload": "^3.2.1",
+        "sass": "^1.63.6"
+    },
+    "scripts": {
+        "serve": "npx reload -d ./src -w ./src",
+        "sass:dev": "npx sass --watch src/scss:src/css",
+        "sass:build": "npx sass src/scss:src/css",
+        "dev": "concurrently \"npm:sass:dev\" \"npm:serve\"",
+        "build": "npm run sass:build && rsync -av --exclude='scss' src/ build"
+    }
+}

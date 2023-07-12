@@ -12,14 +12,17 @@ window.addEventListener("load", () => {
             const formData = new FormData(form);
             const name = formData.get("name");
             const email = formData.get("email");
-            const budget = formData.get("budget");
+            // const budget = formData.get("budget");
             const description = formData.get("description");
-            if (!name || !email || !budget || !description) {
+
+            // if (!name || !email || !budget || !description) {
+            if (!name || !email || !description) {
                 console.error("Form does not contain all the required fields");
             }
 
             const subject = `Blueproof Contact Form - ${name}`
-            const message = `Contact form message from: ${name} | ${email}\n\nBudget: ${budget}\n\n${description}`
+            // const message = `Contact form message from: ${name} | ${email}\n\nBudget: ${budget}\n\n${description}`
+            const message = `Contact form message from: ${name} | ${email}\n\n${description}`
             try {
                 const response = await fetch(EMAILER_API, {
                     method: "POST",

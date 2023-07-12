@@ -29,7 +29,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <link rel="icon" type="image/ico" href="/favicon.ico">
 
     <link rel="stylesheet" href="css/normalise.css">
     <link rel="stylesheet" href="css/main.css">
@@ -38,13 +38,28 @@
     <script src="js/carousel.js" defer></script>
     <script src="js/nav.js" defer></script>
     <script src="js/formSubmit.js" defer></script>
+    <script type="module" src="js/scene.js"></script>
+
+    <style>
+        .main-nav .left {
+            transform: translateX(-10000px);
+        }
+
+        .main-nav .right {
+            transform: translateX(10000px);
+        }
+    </style>
+
 </head>
 
 <body>
     <nav class="main-nav hidden" aria-label="Main Navigation" role="navigation" data-open-mobile="false">
-        <div class="left"> <a href="/"><img src="res/logo/logo-condensed.svg" alt="small variant of the BlueProof logo"
-                    class="nav-logo" /></a></div>
-        <div class="right">
+        <div class="left" style="transform: translateX(-200);">
+            <a href="/">
+                <img src="res/logo/logo-condensed.svg" alt="small variant of the BlueProof logo" class="nav-logo" />
+            </a>
+        </div>
+        <div class="right" style="transform: translateX(200);">
             <button id="nav-close" class="nav-toggle" aria-controls="nav-list" aria-label="close navigation menu">
                 <img src="res/icons/cross.svg" alt="x icon" />
             </button>
@@ -52,7 +67,7 @@
                 <li><a onclick="scrollToEl(event, 'what-we-do')" href="#what-we-do">what we do</a></li>
                 <li><a onclick="scrollToEl(event, 'projects')" href="#projects">projects</a></li>
                 <li><a onclick="scrollToEl(event, 'contact')" href="#contact">enquire</a></li>
-                <li><a onclick="scrollToEl(event, 'story')" href="#story">our story</a></li>
+                <!-- <li><a onclick="scrollToEl(event, 'story')" href="#story">our story</a></li> -->
             </ul>
             <button id="nav-open" class="nav-toggle" aria-controls="nav-items" aria-label="open navigation menu">
                 <img src="res/icons/hamburger.svg" alt="hamburger icon" />
@@ -191,19 +206,41 @@
                 </g>
             </svg>
         </div>
-        <h2 class="stl" id="hero-stl">Where programming meets design.</h2>
+        <h2 class="stl" id="hero-stl">Virtually by design.</h2>
     </div>
     <div class="sections">
         <section class="what-we-do" id="what-we-do">
             <div class="content title-l-r">
                 <h1 class="title">What we do.</h1>
-                <p class="left">BlueProof is a website-building agency that focuses on marrying functionality and
-                    aesthetics. We take pride in creating beautiful and feature-rich websites to fit our clients' needs.
-                    We can build anything from a simple portfolio site to showcase your work, all the way to a fully
-                    featured online store. So, if you want to be the owner of the next trendy website, please get in
-                    touch and we’ll take it from there.</p>
-                <div class="feature-grid right">
-                    <div class="feature"> <img src="res/icons/Animation.png" class="image"
+                <div class="left">
+                    <p class="left">BlueProof is a website-building agency that specialises in the integration of 3D
+                        digital
+                        models. Whether you’re an event organiser wanting to provide an interactive map for your guests,
+                        or
+                        a designer looking for a new way of displaying your products, we can build your virtual models
+                        for
+                        you and smoothly embed them within a curated website with seamless real-time rendering. As well
+                        as
+                        blowing your viewers’ minds with this impressive feature, we can help you achieve your
+                        sustainability targets by going paper-free. We have experience in building and integrating
+                        anything
+                        from simple hand-held gadgets to large festival maps, however if you have something more
+                        specific or
+                        unusual in mind, please let us know. So, if you want to be the owner of the next BlueProof
+                        experience, please get in touch and we’ll take it from there.</p>
+                    <div class="social-bar">
+                        <a target="_blank" href="mailto:admin@blueproof.online"><img class="social-icon"
+                                src="res/icons/email.png" /></a>
+                        <a href="https://www.linkedin.com/company/blueproof-online/" target="_blank"><img
+                                class="social-icon" src="res/icons/in.png" /></a>
+                        <a href="https://www.instagram.com/blueproof.online/" target="_blank"><img class="social-icon"
+                                src="res/icons/ig.png" /></a>
+                        <a href="https://www.facebook.com/profile.php?id=100092491866073" target="_blank"><img
+                                class="social-icon" src="res/icons/fb.png" /></a>
+                    </div>
+                </div>
+                <!-- <div class="feature-grid right"> -->
+                <!-- <div class="feature"> <img src="res/icons/Animation.png" class="image"
                             alt="an animation of a ball bouncing">
                         <h2 class="name">ANIMATION</h2>
                     </div>
@@ -225,7 +262,17 @@
                     </div>
                     <div class="feature"> <img src="res/icons/Maintenance.png" class="image" alt="a spanner">
                         <h2 class="name">MAINTENANCE</h2>
-                    </div>
+                    </div> -->
+                <!-- </div> -->
+                <div class="right interactive-model-container">
+                    <canvas id="interactive-model">
+                    </canvas>
+                    <p class="interactive-model-tagline">
+                        Set design for Romeo and Juliet Arena di Verona, 2019, by artist David Umemoto
+                    </p>
+                    <p class="interactive-model-helper">
+                        drag to interact
+                    </p>
                 </div>
             </div>
         </section>
@@ -352,10 +399,23 @@
         <section class="contact" id="contact">
             <div class="title-l-r content">
                 <h1 class="title">Enquire.</h1>
-                <p class="left"> If you would like to get a quotation, discuss a project with us, or just find out a
-                    little more about what we do, then please fill in the form and we'll get back to you within 48
-                    hours. We offer a free short consultation with every new client, so don't hesitate to get in touch.
-                </p>
+                <div class="left">
+                    <p> If you would like to get a quotation, discuss a project with us, or just find out a
+                        little more about what we do, then please fill in the form and we'll get back to you within 48
+                        hours. We offer a free short consultation with every new client, so don't hesitate to get in
+                        touch.
+                    </p>
+                    <div class="social-bar">
+                        <a target="_blank" href="mailto:admin@blueproof.online"><img class="social-icon"
+                                src="res/icons/email.png" /></a>
+                        <a href="https://www.linkedin.com/company/blueproof-online/" target="_blank"><img
+                                class="social-icon" src="res/icons/in.png" /></a>
+                        <a href="https://www.instagram.com/blueproof.online/" target="_blank"><img class="social-icon"
+                                src="res/icons/ig.png" /></a>
+                        <a href="https://www.facebook.com/profile.php?id=100092491866073" target="_blank"><img
+                                class="social-icon" src="res/icons/fb.png" /></a>
+                    </div>
+                </div>
                 <form id="contact-form" class="contact-form right">
                     <div class="form-group">
                         <label for="contact-form-name">Name: </label>
@@ -365,7 +425,7 @@
                         <label for="contact-form-email">Email: </label>
                         <input type="email" name="email" id="contact-form-email" required>
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="contact-form-budget">Budget: </label>
                         <div class="select-div">
                             <select form="contact-form" name="budget" id="contact-form-budget" required>
@@ -377,7 +437,7 @@
                                 <option value="gt 10000">&gt; £10,000</option>
                             </select>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="form-group">
                         <label for="contact-form-description">Describe your project:</label>
                         <textarea form="contact-form" name="description" id="contact-form-description" rows="5"
@@ -387,7 +447,7 @@
                 </form>
             </div>
         </section>
-        <section class="story" id="story">
+        <!-- <section class="story" id="story">
             <div class="title-r-l content">
                 <h1 class="title">Our story.</h1>
                 <div class="right">
@@ -406,8 +466,7 @@
                         alt="A selfie of Max and Rafi on a rooftop" />
                 </div>
             </div>
-    </div>
-    </section>
+        </section> -->
     </div>
 </body>
 
