@@ -26,13 +26,13 @@
         content="BlueProof is a website-building agency that focuses on marrying functionality and aesthetics. Get in touch today to make your dream website a reality.">
     <meta property="twitter:image" content="https://www.blueproof.online/android-chrome-512x512.png">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="icon" type="image/ico" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="res/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="res/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="res/favicon-16x16.png">
+    <link rel="icon" type="image/ico" href="res/favicon.ico">
 
     <link rel="stylesheet" href="css/normalise.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/main.scss">
     <script src="js/lib/lax.js" defer></script>
     <script src="js/scrollAnims.js" defer></script>
     <script src="js/carousel.js" defer></script>
@@ -40,26 +40,16 @@
     <script src="js/formSubmit.js" defer></script>
     <script type="module" src="js/scene.js"></script>
 
-    <style>
-        .main-nav .left {
-            transform: translateX(-10000px);
-        }
-
-        .main-nav .right {
-            transform: translateX(10000px);
-        }
-    </style>
-
 </head>
 
 <body>
     <nav class="main-nav hidden" aria-label="Main Navigation" role="navigation" data-open-mobile="false">
-        <div class="left" style="transform: translateX(-200);">
+        <div class="left" style="transform: translateX(-10000px);">
             <a href="/">
                 <img src="res/logo/logo-condensed.svg" alt="small variant of the BlueProof logo" class="nav-logo" />
             </a>
         </div>
-        <div class="right" style="transform: translateX(200);">
+        <div class="right" style="transform: translateX(10000px);">
             <button id="nav-close" class="nav-toggle" aria-controls="nav-list" aria-label="close navigation menu">
                 <img src="res/icons/cross.svg" alt="x icon" />
             </button>
@@ -286,10 +276,33 @@
                         <div class="carousel-item">
                             <div class="project">
                                 <div class="image"> <img
+                                        alt="A screenshot of the Wolfson College May Ball app viewed on a laptop"
+                                        class="laptop" src="res/projects/wmb_laptop.webp" /> <img
+                                        alt="A screenshot of the Wolfson College May Ball app viewed on a mobile phone"
+                                        class="mobile" src="res/projects/wmb_mobile.webp" /> </div>
+                                <h2 class="name">Wolfson May Ball Companion App</h2>
+                                <div class="text">
+                                    <p class="quote">
+                                        "BlueProof were fantastic to work with! After they built the infrastructure for
+                                        our app, we were given access to the admin portal to input our data. This was
+                                        really useful for us because it gave us real-time control over the app's content
+                                        when last-minute chaos led to frequent small changes. The data entry system was
+                                        easy to use by following a clear and thorough guide that BlueProof provided,
+                                        specific to the features built into our app. Very pleased with the end result
+                                        and was a pleasure working with them!"
+                                    </p>
+                                    <p class="author">- Dan Scott, <i>Vice President</i></p> <a class="view"
+                                        href="https://app.wolfsoncollegemayball.com" target="_blank">view</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="project">
+                                <div class="image"> <img
                                         alt="A screenshot of the Jesus May Ball website viewed on a laptop"
-                                        class="laptop" src="res/projects/jmb_laptop.png" /> <img
+                                        class="laptop" src="res/projects/jmb_laptop.webp" /> <img
                                         alt="A screenshot of the Jesus May Ball website viewed on a mobile phone"
-                                        class="mobile" src="res/projects/jmb_mobile.png" /> </div>
+                                        class="mobile" src="res/projects/jmb_mobile.webp" /> </div>
                                 <h2 class="name">Jesus May Ball 2022 - Taking Flight</h2>
                                 <div class="text">
                                     <p class="quote">
@@ -307,9 +320,9 @@
                             <div class="project">
                                 <div class="image"> <img
                                         alt="A screenshot of the Joe Fenwick-Wilson website viewed on a laptop"
-                                        class="laptop" src="res/projects/jfw_laptop.png" /> <img
+                                        class="laptop" src="res/projects/jfw_laptop.webp" /> <img
                                         alt="A screenshot of the Joe Fenwick-Wilson website viewed on a mobile phone"
-                                        class="mobile" src="res/projects/jfw_mobile.png" /> </div>
+                                        class="mobile" src="res/projects/jfw_mobile.webp" /> </div>
                                 <h2 class="name">Joe Fenwick-Wilson</h2>
                                 <div class="text">
                                     <p class="quote">
@@ -329,9 +342,9 @@
                             <div class="project">
                                 <div class="image"> <img
                                         alt="A screenshot of the May Week Mega Event website viewed on a laptop"
-                                        class="laptop" src="res/projects/mwme_laptop.png" /> <img
+                                        class="laptop" src="res/projects/mwme_laptop.webp" /> <img
                                         alt="A screenshot of the May Week Mega Event website viewed on a mobile phone"
-                                        class="mobile" src="res/projects/mwme_mobile.png" /> </div>
+                                        class="mobile" src="res/projects/mwme_mobile.webp" /> </div>
                                 <h2 class="name">May Week Mega Event</h2>
                                 <div class="text">
                                     <p class="quote">
@@ -349,9 +362,9 @@
                         <div class="carousel-item">
                             <div class="project">
                                 <div class="image"> <img alt="A screenshot of the Kol Tov website viewed on a laptop"
-                                        class="laptop" src="res/projects/kt_laptop.png" /> <img
+                                        class="laptop" src="res/projects/kt_laptop.webp" /> <img
                                         alt="A screenshot of the Kol Tov website viewed on a mobile phone"
-                                        class="mobile" src="res/projects/kt_mobile.png" /> </div>
+                                        class="mobile" src="res/projects/kt_mobile.webp" /> </div>
                                 <h2 class="name">Kol Tov</h2>
                                 <div class="text">
                                     <p class="quote">
@@ -371,9 +384,9 @@
                             <div class="project">
                                 <div class="image"> <img
                                         alt="A screenshot of the Juliet Mitchell website viewed on a laptop"
-                                        class="laptop" src="res/projects/jm_laptop.png" /> <img
+                                        class="laptop" src="res/projects/jm_laptop.webp" /> <img
                                         alt="A screenshot of the Juliet Mitchell website viewed on a mobile phone"
-                                        class="mobile" src="res/projects/jm_mobile.png" /> </div>
+                                        class="mobile" src="res/projects/jm_mobile.webp" /> </div>
                                 <h2 class="name">Juliet Mitchell</h2>
                                 <div class="text">
                                     <p class="quote">

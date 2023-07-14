@@ -42,7 +42,8 @@ function updateMaterials(root, update) {
 }
 const loader = new GLTFLoader();
 let MAIN_SCENE;
-loader.load('/res/models/scene_opt.glb', function (gltf) {
+const url = new URL('../res/models/scene_opt.glb', import.meta.url)
+loader.load(url.pathname, function (gltf) {
     MAIN_SCENE = gltf.scene;
     MAIN_SCENE.position.set(0, -2, 0);
     updateMaterials(MAIN_SCENE, (item) => {

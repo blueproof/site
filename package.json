@@ -1,13 +1,10 @@
 {
     "devDependencies": {
-        "reload": "^3.2.1",
-        "sass": "^1.63.6"
+        "@parcel/transformer-sass": "^2.9.3",
+        "parcel": "^2.9.3"
     },
     "scripts": {
-        "serve": "npx reload -d ./src -w ./src",
-        "sass:dev": "npx sass --watch src/scss:src/css",
-        "sass:build": "npx sass src/scss:src/css",
-        "dev": "concurrently \"npm:sass:dev\" \"npm:serve\"",
-        "build": "npm run sass:build && rsync -av --exclude='scss' src/ build"
+        "dev": "parcel index.html",
+        "build": "parcel build index.html"
     }
 }

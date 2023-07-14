@@ -22,4 +22,4 @@ jobs:
                   role-to-assume: ${{ secrets.AWS_IDENTITY }}
                   role-session-name: GitHub_to_AWS_via_FederatedOIDC
                   aws-region: ${{ secrets.AWS_REGION }}
-            - run: aws s3 sync build s3://www.blueproof.online --delete
+            - run: aws s3 sync dist s3://www.blueproof.online --delete
