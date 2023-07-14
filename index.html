@@ -39,7 +39,6 @@
     <script src="js/nav.js" defer></script>
     <script src="js/formSubmit.js" defer></script>
     <script type="module" src="js/scene.js"></script>
-
 </head>
 
 <body>
@@ -54,10 +53,9 @@
                 <img src="res/icons/cross.svg" alt="x icon" />
             </button>
             <ul class="nav-list" id="nav-items">
-                <li><a onclick="scrollToEl(event, 'what-we-do')" href="#what-we-do">what we do</a></li>
-                <li><a onclick="scrollToEl(event, 'projects')" href="#projects">projects</a></li>
-                <li><a onclick="scrollToEl(event, 'contact')" href="#contact">enquire</a></li>
-                <!-- <li><a onclick="scrollToEl(event, 'story')" href="#story">our story</a></li> -->
+                <li><a data-target="what-we-do" href="#what-we-do">what we do</a></li>
+                <li><a data-target="projects" href="#projects">projects</a></li>
+                <li><a data-target="contact" href="#contact">enquire</a></li>
             </ul>
             <button id="nav-open" class="nav-toggle" aria-controls="nav-items" aria-label="open navigation menu">
                 <img src="res/icons/hamburger.svg" alt="hamburger icon" />
@@ -197,7 +195,7 @@
             </svg>
         </div>
         <h2 class="stl" id="hero-stl">Virtually by design.</h2>
-        <a id="hero-down-arrow" class="down-arrow" onclick="scrollToEl(event, 'what-we-do')" href="#what-we-do">
+        <a id="hero-down-arrow" class="down-arrow" data-target="what-we-do" href="#what-we-do">
             &#x25BC;
         </a>
     </div>

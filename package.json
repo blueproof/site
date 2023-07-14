@@ -1,10 +1,12 @@
 {
     "devDependencies": {
         "@parcel/transformer-sass": "^2.9.3",
-        "parcel": "^2.9.3"
+        "parcel": "^2.9.3",
+        "reload": "^3.2.1"
     },
     "scripts": {
         "dev": "parcel index.html",
-        "build": "parcel build index.html"
+        "build": "parcel build index.html",
+        "serve": "reload -d dist/"
     }
 }
