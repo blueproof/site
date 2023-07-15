@@ -35,10 +35,16 @@
     .down-arrow {
         @include mixins.fadeIn(1s, 3s);
         position: absolute;
-        font-size: 6mm;
         color: white;
         text-decoration: none;
         bottom: 15vh;
+        width: 3mm;
+
+        .arrow {
+            transform: rotate(-90deg);
+            width: 3mm;
+            cursor: pointer;
+        }
     }
 }
 
