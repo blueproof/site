@@ -9,6 +9,7 @@ window.addEventListener("load", () => {
         const elTop = el.offsetTop;
         const elHeight = el.offsetHeight;
         const screenHeight = window.innerHeight;
+        //TODO: make sure this always scrolls to top if too large
         const to = elTop - (screenHeight - elHeight) / 2;
         window.scrollTo({
             top: to,

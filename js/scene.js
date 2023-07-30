@@ -4,7 +4,7 @@ import { OrbitControls } from './lib/OrbitControls.js';
 import { GLTFLoader } from './lib/GLTFLoader.js';
 
 const canvas = document.querySelector("#interactive-model");
-const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true });
+const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
 
 function resizeRendererToDisplaySize(renderer) {
     const canvas = renderer.domElement;

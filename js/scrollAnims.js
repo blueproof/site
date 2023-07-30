@@ -80,7 +80,7 @@ window.addEventListener("load", function () {
     //Desktop or tablet
     if (!navigator.userAgent.toLowerCase().match(/mobile/i)) {
 
-        lax.addElements("section", {
+        lax.addElements("*[data-paralax=true]", {
             scrollY: {
                 opacity: [
                     ["elInY", "elCenterY", "elOutY"],

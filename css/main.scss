@@ -2,6 +2,28 @@
 @use "mixins";
 @use "pre";
 
+@keyframes blob-anim {
+    0% {
+        transform: translateY(100vh);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.bg {
+    position: fixed;
+    inset: 0;
+    background-color: vars.$col_bg;
+    svg {
+        width: 100%;
+        height: 100%;
+    }
+    #c1 {
+        animation: blob-anim 10s linear 0s infinite;
+    }
+}
+
 .hero {
     height: 100vh;
     width: 100%;
@@ -52,7 +74,6 @@
     position: fixed;
     top: 0;
     @include mixins.breakpoint(desktop) {
-        background-color: adjust-color($color: vars.$col_bg, $alpha: -0.5);
         backdrop-filter: blur(5px);
     }
     width: 100%;
@@ -157,15 +178,22 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20vh;
-    width: min(90vw, 1250px);
+    gap: 10vh;
     margin: 0 auto;
 }
 section {
     display: flex;
     justify-content: center;
     align-items: center;
-    // padding: 0 3vw;
+    width: min(90vw, 1250px);
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+}
+
+.title {
+    font-family: "Articulat";
+    font-size: 1.8rem;
+    letter-spacing: 0.3ch;
 }
 
 .title-l-r,
@@ -234,6 +262,10 @@ section {
     .interactive-model-container {
         min-height: auto;
     }
+}
+
+body {
+    background-color: vars.$col_bg;
 }
 
 .what-we-do {
@@ -311,6 +343,30 @@ section {
     }
 }
 
+.case-study {
+    width: 100%;
+    border: 6px solid vars.$col_contrast1;
+    box-shadow: 0 0px 8px white;
+    border-left-width: 0;
+    border-right-width: 0;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 2%);
+    .content {
+        width: min(90vw, 1250px);
+    }
+
+    img {
+        width: 100%;
+    }
+
+    #case-study-img-2 {
+        width: 75%;
+        display: block;
+        margin: auto;
+        border-radius: 0.5rem;
+    }
+}
+
 .projects {
     .carousel {
         width: 100%;
@@ -359,6 +415,9 @@ section {
         }
         .name {
             grid-area: heading;
+            font-family: "Articulat";
+            font-size: 1.4rem;
+            letter-spacing: 0.3ch;
         }
         .text {
             grid-area: text;
@@ -470,36 +529,6 @@ section {
         @include mixins.button-style;
     }
 }
-
-// .story {
-//     .image-container {
-//         position: relative;
-//         @include mixins.breakpoint(desktop) {
-//             &::after {
-//                 position: absolute;
-//                 content: "";
-//                 top: 0;
-//                 left: 0;
-//                 width: 100%;
-//                 height: 100%;
-//                 background: none;
-//                 background: linear-gradient(
-//                     90deg,
-//                     rgba(0, 0, 0, 0) 90%,
-//                     rgba(0, 0, 0, 1) 100%
-//                 );
-//             }
-//         }
-//     }
-//     .story-img {
-//         width: 100%;
-//         @include mixins.breakpoint(desktop) {
-//             position: absolute;
-//             bottom: 0;
-//         }
-//     }
-//     margin-bottom: 25vh;
-// }
 
 .contact {
     margin-bottom: 25vh;
