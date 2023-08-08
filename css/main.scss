@@ -345,12 +345,12 @@ body {
 
 .case-study {
     width: 100%;
-    border: 6px solid vars.$col_contrast1;
-    box-shadow: 0 0px 8px white;
+    // border: 6px solid vars.$col_contrast1;
+    // box-shadow: 0 0px 8px white;
     border-left-width: 0;
     border-right-width: 0;
     flex-direction: column;
-    background-color: rgba(255, 255, 255, 2%);
+    background-color: rgba(vars.$col_contrast1, 0.8);
     .content {
         width: min(90vw, 1250px);
     }
