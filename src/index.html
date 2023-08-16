@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BlueProof</title>
+    <meta name="description"
+        content="BlueProof is a website-building agency that focuses on marrying functionality and aesthetics. Get in touch today to make your dream website a reality.">
+
+    <!-- Facebook / Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.blueproof.online">
+    <meta property="og:title" content="BlueProof">
+    <meta property="og:description"
+        content="BlueProof is a website-building agency that focuses on marrying functionality and aesthetics. Get in touch today to make your dream website a reality.">
+    <meta property="og:image" content="https://www.blueproof.online/android-chrome-512x512.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.blueproof.online">
+    <meta property="twitter:title" content="Meta Tags — Preview, Edit and Generate">
+    <meta property="twitter:description"
+        content="BlueProof is a website-building agency that focuses on marrying functionality and aesthetics. Get in touch today to make your dream website a reality.">
+    <meta property="twitter:image" content="https://www.blueproof.online/android-chrome-512x512.png">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="res/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="res/favicon-32x32.png">
+    <link rel="icon" type="image/ico" href="res/favicon.ico">
+
+    <link rel="stylesheet" href="index.css">
+    <script src="js/nav.ts" defer></script>
+    <script src="js/formSubmit.js" defer></script>
+    <script type="module" src="js/scrollAnims.js" defer></script>
+    <script type="module" src="js/scene.ts" defer></script>
+</head>
+
+<body
+    class="w-full h-screen m-0 p-0 absolute inset-0 bg-background overscroll-none overflow-x-hidden text-white text-arial">
+    <nav id="nav"
+        class="main-nav group fixed top-0 w-full py-4 grid [grid-template-columns:_auto_1fr] items-start tracking-wide z-10 "
+        aria-label="Main Navigation" role="navigation" data-open-mobile="false">
+        <div id="nav-bg" class="w-full h-full xl:backdrop-blur-sm xl:backdrop-brightness-90 absolute">
+
+        </div>
+        <div id="nav-left" class="mx-4" style="transform: translateX(-10000px);">
+            <a href="/">
+                <img class="h-8" src="res/logo/logo-condensed.svg" alt="small variant of the BlueProof logo" />
+            </a>
+        </div>
+        <div id="nav-right" class="ml-auto self-center mx-4" style="transform: translateX(10000px);">
+            <button id="nav-close"
+                class="float-right xl:hidden border-none bg-none cursor-pointer group-data-[open-mobile='false']:hidden h-7"
+                aria-controls="nav-list" aria-label="close navigation menu">
+                <img class="h-4" src="res/icons/cross.svg" alt="x icon" />
+            </button>
+            <ul class="flex xl:flex-row group-data-[open-mobile='false']:hidden xl:group-data-[open-mobile='false']:flex flex-col list-none xl:mr-0 mr-10 gap-6 xl:gap-8"
+                id="nav-items">
+                <li>
+                    <a data-target="what-we-do" href="#what-we-do">what we do</a>
+                </li>
+                <li
+                    class="relative before:content-['|'] before:absolute before:left-[-1.15em] before:hidden xl:before:block">
+                    <a data-target="testimonials" href="#testimonials">testimonials</a>
+                </li>
+                <li
+                    class="relative before:content-['|'] before:absolute before:left-[-1.15em] before:hidden xl:before:block">
+                    <a data-target="about" href="#about">about us</a>
+                </li>
+                <li
+                    class="relative before:content-['|'] before:absolute before:left-[-1.15em] before:hidden xl:before:block">
+                    <a data-target="contact" href="#contact">enquire</a>
+                </li>
+            </ul>
+            <button id="nav-open"
+                class="xl:hidden border-none bg-none cursor-pointer group-data-[open-mobile='true']:hidden h-7"
+                aria-controls="nav-items" aria-label="open navigation menu">
+                <img class="h-4" src="res/icons/hamburger.svg" alt="hamburger icon" />
+            </button>
+        </div>
+    </nav>
+    <div id="hero" class="w-full h-full relative flex flex-col items-center gap-8">
+        <div class="absolute inset-0">
+            <div class="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
+            <svg class="w-full h-full">
+                <defs>
+                    <pattern id="mmmotif-pattern" width="40" height="40" patternUnits="userSpaceOnUse"
+                        patternTransform="translate(-40 0) scale(1.3) rotate(14) skewX(-1) skewY(0)">
+                        <path
+                            d="M18.2565 9.41648C19.2197 8.87581 20.7813 8.87581 21.7445 9.41648L29.9098 14L20.0005 19.5625L10.0912 14L18.2565 9.41648Z"
+                            fill="#007aff"></path>
+                        <path
+                            d="M10.0908 14L20.0001 19.5625V31.5625L11.8348 26.979C10.8716 26.4383 10.0908 25.1046 10.0908 24V14Z"
+                            fill="#69a8ff"></path>
+                        <path
+                            d="M20 19.5625L29.9093 14V24C29.9093 25.1046 29.1285 26.4383 28.1653 26.979L20 31.5625V19.5625Z"
+                            fill="#004fcb"></path>
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" opacity="30%" fill="url(#mmmotif-pattern)"></rect>
+            </svg>
+        </div>
+        <div class="w-[80%] lg:w-[60%] mt-[30vh] pt-4 animate-fade animate-ease-in animate-fill-backwards"
+            id="hero-logo">
+            <svg id="eu2jYfwMaZg1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 0 400 42.63479" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+                <style>
+                    #eu2jYfwMaZg3_to {
+                        animation: eu2jYfwMaZg3_to__to 1500ms linear 1 normal forwards
+                    }
+
+                    @keyframes eu2jYfwMaZg3_to__to {
+                        0% {
+                            transform: translate(78.410997px, 10.161145px);
+                            animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1)
+                        }
+
+                        100% {
+                            transform: translate(78.410997px, 14.161145px)
+                        }
+                    }
+
+                    #eu2jYfwMaZg4_to {
+                        animation: eu2jYfwMaZg4_to__to 1500ms linear 1 normal forwards
+                    }
+
+                    @keyframes eu2jYfwMaZg4_to__to {
+                        0% {
+                            transform: translate(78.416496px, 10.077769px);
+                            animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1)
+                        }
+
+                        100% {
+                            transform: translate(78.416496px, 18.077769px)
+                        }
+                    }
+
+                    #eu2jYfwMaZg5_to {
+                        animation: eu2jYfwMaZg5_to__to 1500ms linear 1 normal forwards
+                    }
+
+                    @keyframes eu2jYfwMaZg5_to__to {
+                        0% {
+                            transform: translate(94.82225px, 6.844259px);
+                            animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1)
+                        }
+
+                        100% {
+                            transform: translate(94.82225px, 17.956248px)
+                        }
+                    }
+
+                    #eu2jYfwMaZg6_to {
+                        animation: eu2jYfwMaZg6_to__to 1500ms linear 1 normal forwards
+                    }
+
+                    @keyframes eu2jYfwMaZg6_to__to {
+                        0% {
+                            transform: translate(78.421997px, 15.358435px);
+                            animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1)
+                        }
+
+                        100% {
+                            transform: translate(78.421997px, 30.358435px)
+                        }
+                    }
+
+                    #eu2jYfwMaZg7_to {
+                        animation: eu2jYfwMaZg7_to__to 1500ms linear 1 normal forwards
+                    }
+
+                    @keyframes eu2jYfwMaZg7_to__to {
+                        0% {
+                            transform: translate(78.416496px, 15.106882px);
+                            animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1)
+                        }
+
+                        100% {
+                            transform: translate(78.416496px, 34.106882px)
+                        }
+                    }
+
+                    #eu2jYfwMaZg8_to {
+                        animation: eu2jYfwMaZg8_to__to 1500ms linear 1 normal forwards
+                    }
+
+                    @keyframes eu2jYfwMaZg8_to__to {
+                        0% {
+                            transform: translate(176.406372px, 0.508406px);
+                            animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1)
+                        }
+
+                        100% {
+                            transform: translate(176.406372px, 23.508406px)
+                        }
+                    }
+                </style>
+                <g>
+                    <g id="eu2jYfwMaZg3_to" transform="translate(78.410997,10.161145)">
+                        <path
+                            d="M5.571,4.722c-.047.123-.063.854-.037,1.625L5.583,7.75l1.667.042c1.892.048,2.316-.093,2.805-.93.466-.798.167-1.786-.644-2.125-.764-.319-3.719-.331-3.84-.015M147.833,6.25v1.417h3.584h3.583v2.166v2.167h-3.583-3.584v1.583v1.584h3.567h3.566l.121-3.334.122-3.333h.812.812v-1.833-1.834h-4.5-4.5v1.417M15.5,7.47c0,.337-1.24,1.536-1.938,1.873l-.77.373.78.296c.429.163,1.031.488,1.337.721.862.657,1.28-.359,1.017-2.47-.093-.742-.426-1.362-.426-.793m83.902,2.947c-.001,1.558.024,2.218.055,1.466s.031-2.027.001-2.833c-.031-.807-.056-.192-.056,1.367M5.5,13.75v1.75h1.792c2.781-.001,3.876-.865,3.102-2.447-.443-.904-.855-1.048-3.019-1.051L5.5,12v1.75m87.733,3c.136,4.995,2.526,7.089,8.085,7.081c5.575-.008,8.04-2.333,8.003-7.548l-.011-1.7-.303,1.061c-.86,3.007-3.345,4.443-7.674,4.434-4.612-.009-7.112-1.476-7.942-4.661-.204-.784-.214-.704-.158,1.333m-77.359.111c-1.164,2.619-2.362,2.966-10.254,2.97l-5.631.002.047,1.875.047,1.875l4.25.048c6.88.076,9.214-.257,10.483-1.498c1.224-1.197,1.942-3.381,1.646-5.009-.202-1.118-.207-1.12-.588-.263M48.37,21.708l.047,1.875h6.833h6.833l.047-1.875.048-1.875h-6.928-6.928l.048,1.875m93.5,0l.047,1.875l7.323.044c4.028.024,7.375-.014,7.438-.084.064-.069.077-.933.03-1.918l-.085-1.792h-7.4-7.401l.048,1.875"
+                            transform="translate(-78.410997,-14.161145)" fill="#0cf" fill-rule="evenodd" />
+                    </g>
+                    <g id="eu2jYfwMaZg4_to" transform="translate(78.416496,10.077769)">
+                        <path
+                            d="M155.089,11.762c-.067,1.793-.077,3.306-.022,3.361.055.054.1-.551.1-1.345v-1.445h.833.833v-1.916-1.917h-.811-.811l-.122,3.262M93.186,20.087c-.049,4.686,1.767,6.764,6.481,7.415c6.165.852,9.696-1.871,9.652-7.443-.014-1.788-.016-1.799-.221-.976-.776,3.135-3.41,4.742-7.78,4.748-4.696.006-7.234-1.651-8.038-5.248-.041-.183-.083.494-.094,1.504m63.54,1.163c-.001.825.028,1.184.062.797.035-.387.036-1.062.001-1.5-.034-.438-.063-.122-.063.703M15.787,20.759c-1.275,2.518-3.078,2.969-11.495,2.873L0,23.583v1.89v1.889l5.958-.067c7.833-.088,8.512-.291,9.941-2.973.527-.989.785-3.166.472-3.987-.154-.403-.17-.391-.584.424m32.546,4.699v1.875h6.917h6.917v-1.875-1.875h-6.917-6.917v1.875m93.5,0v1.875h7.476h7.475l-.017-1.875-.017-1.875h-7.458-7.459v1.875"
+                            transform="translate(-78.416496,-18.077769)" fill="#00a3ff" fill-rule="evenodd" />
+                    </g>
+                    <g id="eu2jYfwMaZg5_to" transform="translate(94.82225,6.844259)">
+                        <path
+                            d="M189.578,10.083c0,4.859.021,6.822.047,4.364.026-2.459.026-6.434,0-8.834s-.047-.388-.047,4.47M155.167,13.75v1.417h.833.833v-1.417-1.417h-.833-.833v1.417M93.179,23.783c-.038,5.369,2.831,7.811,8.813,7.504c5.077-.261,7.15-2.288,7.28-7.12l.057-2.084-.299,1c-1.833,6.15-13.786,6.179-15.543.038l-.297-1.038-.011,1.7m-77.356.631c-1.254,2.55-2.087,2.793-9.865,2.881L0,27.362v1.832v1.831l6.125-.063c6.823-.07,7.231-.129,8.519-1.231c1.373-1.176,2.198-3.812,1.738-5.562l-.152-.582-.407.827M156.725,25c0,.779.029,1.098.064.708.035-.389.035-1.027,0-1.416-.035-.39-.064-.071-.064.708M48.333,29.167v1.833h6.917h6.917v-1.833-1.834h-6.917-6.917v1.834m93.5,0v1.833h7.5h7.5v-1.833-1.834h-7.5-7.5v1.834"
+                            transform="translate(-94.82225,-17.956248)" fill="#007aff" fill-rule="evenodd" />
+                    </g>
+                    <g id="eu2jYfwMaZg6_to" transform="translate(78.421997,15.358435)">
+                        <path
+                            d="M93.183,27.5c-.034,5.099,2.096,7.219,7.484,7.448c5.975.254,8.681-2.049,8.652-7.365l-.009-1.833-.29,1.013c-.86,3-3.47,4.559-7.652,4.567-4.364.01-7.208-1.685-7.966-4.747-.206-.828-.207-.822-.219.917m-77.409.716c-1.204,2.462-1.925,2.667-9.649,2.746L0,31.025v1.923v1.923l5.792-.084c5.982-.087,6.899-.183,8.189-.857c1.751-.915,2.958-3.973,2.404-6.085l-.15-.571-.461.942m32.559,4.703v1.918l6.875-.043l6.875-.044.047-1.875L62.178,31h-6.923-6.922v1.919m93.537-.044l.047,1.875h7.416h7.417l.047-1.875.047-1.875h-7.511-7.511l.048,1.875"
+                            transform="translate(-78.421997,-30.358435)" fill="#0052ff" fill-rule="evenodd" />
+                    </g>
+                    <g id="eu2jYfwMaZg7_to" transform="translate(78.416496,15.106882)">
+                        <path
+                            d="M93.222,31.667c.116,4.597,1.843,6.429,6.609,7.008c6.088.741,9.533-1.924,9.487-7.338-.014-1.704-.02-1.733-.223-1.004-.918,3.3-3.688,4.817-8.428,4.615-4.143-.176-6.434-1.584-7.203-4.427l-.299-1.104.057,2.25m-77.288-.04c-1.304,2.783-2.141,3.043-10.142,3.16L0,34.871v1.827v1.828l5.958-.07c7.228-.084,8.071-.252,9.228-1.837c1.137-1.559,1.565-3.096,1.285-4.619-.209-1.137-.186-1.121-.537-.373m39.274,3.165l-6.875.045v1.832v1.831h6.917h6.917v-1.917c0-1.054-.019-1.898-.042-1.877-.023.022-3.135.061-6.917.086m86.625,1.833v1.875h7.5h7.5v-1.875-1.875h-7.5-7.5v1.875"
+                            transform="translate(-78.416496,-34.106882)" fill="#00f" fill-rule="evenodd" />
+                    </g>
+                    <g id="eu2jYfwMaZg8_to" transform="translate(176.406372,0.508406)">
+                        <path
+                            d="M237.911,10.083c0,4.859.021,6.822.047,4.364.026-2.459.026-6.434,0-8.834s-.047-.388-.047,4.47m60.806-.416c0,.504.031.71.069.458s.038-.665,0-.917-.069-.046-.069.459m53.988.166c0,.321.035.452.077.292.041-.16.041-.423,0-.583-.042-.161-.077-.03-.077.291M93.214,35.667c.072,3.835,1.015,5.219,4.403,6.457.652.239,1.354.293,3.8.293h3l1.435-.702c1.282-.627,1.846-1.087,2.616-2.132.536-.728.746-1.775.803-4l.059-2.333-.298,1.004c-.97,3.269-4.535,4.989-9.174,4.425-3.746-.456-5.677-1.811-6.434-4.516l-.256-.913.046,2.417m-77.256-.334c-1.189,2.76-2.054,3.03-10,3.123L0,38.526v1.904v1.903h5.458c7.785,0,9.038-.328,10.36-2.714.637-1.15.922-3.462.548-4.452l-.157-.417-.251.583m32.375,5.084v1.916h6.917h6.917v-1.916-1.917h-6.917-6.917v1.917m93.5,0v1.916h7.5h7.5v-1.916-1.917h-7.5-7.5v1.917"
+                            transform="translate(-176.406372,-23.508406)" fill="#0700c4" fill-rule="evenodd" />
+                    </g>
+                    <path
+                        d="M291.917,0.266c-7.184,1.94-9.088,13.954-2.878,18.167.391.266.748.522.794.57c1.512,1.582,7.161,1.538,9.917-.077c4.19-2.456,5.797-9.608,3.23-14.375-1.977-3.672-6.641-5.479-11.063-4.285m49.583.055c-2.718.863-4.659,2.775-5.764,5.679-.977,2.567-.667,7.231.641,9.66c2.829,5.252,11.075,6.197,15.011,1.72.496-.564,1.612-2.287,1.612-2.488c0-.05.107-.328.238-.617c2.054-4.524-.026-11.331-4.071-13.324-2.055-1.013-5.555-1.3-7.667-.63M0,10.083v9.75l5.625-.002c7.968-.004,9.006-.313,10.309-3.074c1.364-2.891.4-5.709-2.3-6.727l-.884-.333.499-.193c3.844-1.488,3.535-7.434-.46-8.838-.879-.309-1.376-.333-6.868-.333h-5.921v9.75m48.333,0v9.75h6.917h6.917v-2.416-2.417h-3.834-3.833v-7.333-7.334h-3.083-3.084v9.75M93.167,7.325c0,7.345.063,8.145.755,9.508c2.127,4.195,11.634,4.508,14.345.473.991-1.476,1.066-2.178,1.066-9.965v-7.008h-2.416-2.417l-.001,6.709c0,7.629.022,7.495-1.377,8.131-1.294.587-2.584.316-3.306-.696l-.399-.56.054-6.792.054-6.792h-3.179-3.179v6.992m48.666,2.758v9.75h7.5h7.5v-2.333-2.333h-4.5-4.5v-1.584-1.583h3.584h3.583v-2.167-2.166h-3.583-3.584v-1.417-1.417h4.5h4.5v-2.25-2.25h-7.5-7.5v9.75m46.5,0v9.75h3.167h3.167v-3.5-3.5l2.458-.001c2.683-.001,3.87-.24,5.266-1.058c3.851-2.257,3.818-8.238-.058-10.488-1.495-.868-2.24-.953-8.368-.953h-5.632v9.75m48.5-.009v9.759h3.084h3.083v-3.666-3.667l.875.002.875.001.908,2.457c.499,1.351,1.005,2.644,1.124,2.873.119.23.216.544.217.699s.07.324.155.377c.084.052.203.319.263.593l.109.498h3.376c3.507,0,3.678-.024,3.426-.476-.083-.151-.644-1.474-1.247-2.941-.602-1.466-1.162-2.816-1.245-3-1.025-2.264-1.022-2.095-.044-2.723c3.386-2.173,3.453-7.247.125-9.464-1.439-.958-1.483-.964-8.542-1.024l-6.542-.056v9.758m148.834.096v9.838l3.041-.046l3.042-.045.045-3.625.045-3.625h3.163h3.164v-2.334-2.333L395,8h-3.167v-1.417-1.416h4.084h4.083v-2.417-2.417h-7.167-7.166v9.837M297.239,1.315c.098.077.388.189.645.251c1.943.464,4.363,3.27,4.904,5.684.757,3.384-.201,7.462-2.229,9.48-1.161,1.156-1.546,1.396-3.387,2.115-3.926,1.533-9.687-1.797-10.399-6.012-.648-3.832.123-7.27,2.094-9.333.767-.804,1.677-1.5,1.96-1.5.095,0,.173-.061.173-.135c0-.591,5.558-1.081,6.239-.55m50.094.138c4.552,1.711,6.498,6.492,4.938,12.13-1.325,4.789-7.911,7.117-12.198,4.312-5.876-3.846-4.733-14.53,1.76-16.451c1.65-.488,4.19-.484,5.5.009m-148.262.046c5.797.598,7.026,7.422,1.75,9.721-.808.352-1.186.398-3.555.434-3.963.06-3.766-.153-3.766,4.085v3.094h-2-2v-8.755-8.755l4.089.016c2.249.009,4.716.081,5.482.16m50.896.259c2.62.964,3.9,3.607,2.942,6.075-.303.78-1.327,2-1.679,2-.111,0-.227.057-.258.125-.03.069-.28.24-.555.381-.867.442-.676,1.646.753,4.744.085.184.31.74.501,1.237.19.497.492,1.224.671,1.616s.325.754.325.805-.962.092-2.137.092h-2.136l-.781-2.01c-.429-1.105-.78-2.112-.78-2.236s-.071-.251-.158-.281c-.086-.031-.203-.317-.258-.635-.056-.319-.161-.619-.234-.667-.072-.048-.182-.295-.244-.548-.235-.958-.544-1.123-2.106-1.123-2.068,0-2-.139-2,4.086v3.414h-2-2v-8.765-8.765l5.625.065c5.064.059,5.714.098,6.509.39m148.866.909v1.333h-3.821c-4.698,0-4.345-.209-4.345,2.569c0,2.05.191,2.691.77,2.585.081-.015,1.365-.018,2.855-.007l2.708.02v1.166v1.167h-2.905c-3.756,0-3.428-.375-3.428,3.929v3.404h-1.917-1.917v-8.75-8.75h6h6v1.334m-104.852.819c-3.704.744-4.389,11.125-.851,12.905c2.661,1.34,4.919-.323,5.377-3.96.783-6.227-.955-9.663-4.526-8.945m49.697.029c-.892.175-2.04,1.288-2.341,2.269-.106.348-.282.813-.39,1.033-.586,1.191-.128,7.382.615,8.308c1.013,1.264,2.266,1.857,3.438,1.629c1.117-.218,1.328-.303,1.788-.721c2.294-2.086,2.289-9.77-.009-11.898-.404-.375-1.783-.856-2.246-.783-.064.01-.449.083-.855.163m-101.569.29c-.465.513-.403,4.695.076,5.128.434.392,3.808.455,4.857.091c2.318-.804,2.681-4.155.562-5.181-1.008-.488-5.062-.516-5.495-.038m-48.239.121c-.537.376-.579,5.117-.048,5.401.429.23,3.585.22,4.428-.013c2.571-.711,2.624-4.55.075-5.384-1.102-.361-3.942-.363-4.455-.004M9.411,4.737c.811.339,1.11,1.327.644,2.125-.489.837-.913.978-2.805.93L5.583,7.75L5.534,6.347c-.026-.771-.01-1.502.037-1.625.121-.316,3.076-.304,3.84.015m286.741.219c1.712,1.245,1.871,8.333.225,9.986-2.057,2.068-4.158.029-4.334-4.208-.198-4.731,1.762-7.486,4.109-5.778m49.266-.289c2.533.963,2.624,9.476.114,10.691-2.357,1.141-3.615-.637-3.615-5.108c0-4.528,1.208-6.455,3.501-5.583m-98.097.431c1.653,1.392.055,3.069-2.925,3.069h-1.396v-1.75-1.75h1.904c1.805,0,1.93.022,2.417.431m-48.971.116c.504.339.572.474.616,1.231.089,1.516-.849,2.04-3.674,2.052L194.5,8.5v-1.833-1.834h1.642c1.434,0,1.714.049,2.208.381M9.667,12.212c.701.349,1.086,1.346.806,2.09-.357.949-1.017,1.197-3.181,1.198h-1.792v-1.75-1.75l1.875.002c1.155.002,2.035.082,2.292.21"
+                        fill="#fff" fill-rule="evenodd" />
+                </g>
+            </svg>
+        </div>
+        <h2 class="w-[70%] tracking-wider text-center block animate-fade animate-ease-in animate-delay-[1.5s] animate-fill-backwards"
+            id="hero-stl">
+            Virtually by design.</h2>
+        <a id="hero-down-arrow"
+            class="absolute bottom-[15vh] animate-fade animate-ease-in animate-delay-[3s] animate-fill-backwards"
+            data-target="what-we-do" href="#what-we-do">
+            <img width="3mm" class="-rotate-90 w-3" src="res/icons/arrow_l.png" alt="down arrow" />
+        </a>
+    </div>
+    <div class="w-full m-0 space-y-32">
+        <section id="what-we-do" class="max-w-screen-lg mx-auto px-16 md:px-16 xl:px-0 relative space-y-16 pt-20">
+            <div data-fade-in>
+                <h1 id="title" class="text-2xl md:text-3xl text-center">Digitising your event space
+                    in
+                    interactive 3D
+                </h1>
+            </div>
+            <div data-fade-in class="grid [grid-template-rows:_auto_auto] md:grid-cols-2 gap-16 md:gap-4">
+                <p class="h-fit md:pt-16">
+                    <strong>Paper programmes and illegible 2D maps
+                        are of
+                        the past.</strong><br><br>Bring your event
+                    to life with
+                    a custom web-app
+                    including an interactive 3D map of your space. Try interacting with the adjoining 3D model!
+                </p>
+                <div class="w-full aspect-square mx-auto relative -mb-16">
+                    <canvas class="max-w-full w-full aspect-square right-0 absolute cursor-move"
+                        id="interactive-model"></canvas>
+                </div>
+            </div>
+            <div data-fade-in class="grid [grid-template-rows:_auto_auto] md:grid-cols-2 gap-16 md:gap-4">
+                <div class="md:-mt-16 lg:-mt-32">
+                    <div class="relative h-[300px] lg:h-[400px] aspect-square mx-auto block">
+                        <img class="absolute w-[70%] top-0 left-0" src="res/images/map_1.webp"
+                            alt="A 3D map of Jesus College Cambridge with 3D icons placed around the map">
+                        <img class="absolute w-[50%] bottom-0 right-0" src="res/images/jack_s_gelato.webp"
+                            alt="A user interface with teh title 'Jack's Gelato' and text describing the food vendor below">
+                    </div>
+                </div>
+                <p class="row-start-1 md:col-start-2">
+                    <strong>Help your guests find their way with a real-time
+                        rendered,
+                        navigable 3D map of
+                        your space.</strong>
+                    <br><br>Custom
+                    icons
+                    show the placement of points of interest and with one click display key information.
+                </p>
+            </div>
+            <div data-fade-in class="grid [grid-template-rows:_auto_auto] md:grid-cols-2 gap-16 md:gap-4">
+                <p><strong>Make real-time updates to event
+                        information.</strong><br><br>
+                    Has a key
+                    speaker dropped out at the
+                    last minute? Has
+                    one of
+                    the stages moved location? Make updates via an easy to use, non-technical interface and see the
+                    site
+                    update for users instantly. You can’t do that with a paper programme. DUH.
+                </p>
+                <div class="h-[300px] lg:h-[400px] md:-mt-8 lg:-mt-16 relative">
+                    <img class="xl:absolute block mx-auto max-h-[300px] lg:max-h-[400px] aspect-square xl:right-0"
+                        src="res/images/main_stage.webp"
+                        alt="A modal interface showing information about the 'Main Stage' showing above a 3D map of Jesus College">
+                </div>
+            </div>
+            <div data-fade-in class="grid [grid-template-rows:_auto_auto] md:grid-cols-2 gap-16 md:gap-4">
+                <div class="h-[300px] lg:h-[400px] relative md:-mt-8 lg:-mt-16">
+                    <img class="xl:absolute max-h-[300px] lg:max-h-[400px] aspect-square block mx-auto"
+                        src="res/images/first_aid.webp"
+                        alt="A modal interface showing information about the 'Main Stage' showing above a 3D map of Jesus College">
+                </div>
+                <p class="row-start-1 md:col-start-2">
+                    <strong>Improve the sustainability and accessibility of your
+                        event.</strong><br><br>No
+                    need to print
+                    thousands of physical
+                    programs when you can have one web app one click away. Help your guests easily find accessible
+                    toilets,
+                    first-aid points and lots more vital information. Accessibility information shouldn’t be hard to
+                    find.
+                </p>
+
+            </div>
+
+
+        </section>
+
+        <section id="testimonials" class="max-w-screen-lg mx-auto px-16 md:px-16 xl:px-0 relative pt-20">
+            <div data-fade-in>
+                <h1 id="title" class="text-2xl md:text-3xl text-center">Putting client relationships first
+                </h1>
+                <p class="mt-16 max-w-screen-md text-center mx-auto">
+                    We’re a small team so we make sure you are accompanied throughout the whole process. Your
+                    satisfaction and needs are our main priority. We’re always available to discuss new ideas, features,
+                    or changes you want made to your app. Here’s what some of our previous clients had to say.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 md:gap-x-16 gap-y-16 mt-24 text-sm ">
+                <div data-fade-in>
+                    <p before="“" after="”" class="before:content-[attr(before)] after:content-[attr(after)]">BlueProof
+                        were fantastic to work with!
+                        After they built the infrastructure for our app, we were
+                        given access to the admin portal to input our data. This was really useful for us because it
+                        gave us
+                        real-time control over the app's content when last-minute chaos led to frequent small changes.
+                        The data entry system was easy to use by following a clear and thorough guide that BlueProof
+                        provided, specific to the features built into our app. Very pleased with the end result and was
+                        a pleasure working with them!</p>
+                    <div class=" italic mt-2"> Dan Scott, Vice President of Wolfson May Ball</div>
+                </div>
+                <div data-fade-in>
+                    <p before="“" after="”" class="before:content-[attr(before)] after:content-[attr(after)]">Rafi and
+                        Max communicated effectively throughout the ideation and design process which resulted
+                        in an end product highly tailored to our needs. What was most helpful was their own suggestions
+                        as they continued to search for ways to exceed our predetermined objectives.</p>
+                    <div class="italic mt-2">Rohit Kale, President of Jesus May Ball</div>
+                </div>
+                <div>
+                    <p before="“" after="”" class="before:content-[attr(before)] after:content-[attr(after)]">The team
+                        were an absolute pleasure to work with throughout the process - both as collaborators and as
+                        creatives. They were consistently responsive to all our requests and provided many excellent
+                        suggestions of their own, turning our vision into a reality. Couldn't recommend BlueProof more
+                        highly!</p>
+                    <div class="italic mt-2">George Rosenfeld, President of May Week Mega Event</div>
+                </div>
+                <div data-fade-in>
+                    <p before="“" after="”" class="before:content-[attr(before)] after:content-[attr(after)]">BlueProof
+                        are a multitalented, incredibly professional service. They worked closely with me to create
+                        animations, take photographs of my artworks and helped me to find the right words to communicate
+                        important information to my clients. I couldn’t recommend them more, not only for their friendly
+                        and serious approach but also for the support they offered post-launch.</p>
+                    <div class="italic mt-2">Joe Fenwick-Wilson, Artist</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="pt-20">
+            <h1 data-fade-in id="title" class="text-2xl md:text-3xl text-center ">About us
+            </h1>
+            <div data-fade-in class="grid md:grid-cols-[1fr_3fr] px-16 gap-x-16 items-center mt-16 gap-y-16">
+                <div class="w-full">
+                    <img class="w-[100%] sm:w-[75%] md:w-[100%] aspect-square mx-auto"
+                        src="res/images/max_and_rafi.webp" />
+                </div>
+                <p>
+                    BlueProof was started in 2021 when Max (right) and Rafi (left) met at Jesus College, University of
+                    Cambridge, on the committee for the 2022 Jesus College May Ball.
+                    Rafi a Computer Science student and Max an architect and designer saw an opportunity to create a
+                    companion application for that year's ball. BlueProof was born out of the success of the application
+                    and
+                    grew over time to become the company it is today.
+                </p>
+
+            </div>
+        </section>
+
+
+        <section id="contact" class="pt-20">
+            <h1 id="title" class="text-2xl md:text-3xl text-center">Enquire
+            </h1>
+            <div class="grid md:grid-cols-2 px-16 gap-x-16 mt-16 gap-y-16">
+                <div class="space-y-2 md:pt-8">
+                    <p>
+                        If you would like to get a quotation, discuss a project with us, or just find out a little more
+                        about what we do, then please fill in the form and we'll get back to you within 48 hours. We
+                        offer a
+                        free short consultation with every new client, so don't hesitate to get in touch.
+                    </p>
+                    <div class="flex gap-2 ">
+                        <a target="_blank" href="mailto:admin@blueproof.online"><img class="h-6"
+                                src="res/icons/email.png" /></a>
+                        <a href="https://www.linkedin.com/company/blueproof-online/" target="_blank"><img class="h-6"
+                                src="res/icons/in.png" /></a>
+                        <a href="https://www.instagram.com/blueproof.online/" target="_blank"><img class="h-6"
+                                src="res/icons/ig.png" /></a>
+                        <a href="https://www.facebook.com/profile.php?id=100092491866073" target="_blank"><img
+                                class="h-6" src="res/icons/fb.png" /></a>
+                    </div>
+                </div>
+                <form id="contact-form" class="space-y-4">
+                    <div class="space-y-1">
+                        <label class="block" for="contact-form-name">Name: </label>
+                        <input class="border-2 rounded-2xl w-full bg-transparent px-3 py-1" type="text" name="name"
+                            id="contact-form-name" required>
+                    </div>
+                    <div class="space-y-1">
+                        <label class="block" for="contact-form-email">Email: </label>
+                        <input class="border-2 rounded-2xl w-full bg-transparent px-3 py-1" type="email" name="email"
+                            id="contact-form-email" required>
+                    </div>
+                    <div class="space-y-1">
+                        <label class="block" for="contact-form-description">Describe your project:</label>
+                        <textarea class="rounded-2xl w-full bg-transparent px-3 py-1 border-2" form="contact-form"
+                            name="description" id="contact-form-description" rows="5" required></textarea>
+                    </div>
+                    <button class="rounded-2xl border-2 px-6 py-1 active:scale-[1.04] hover:drop-shadow-brand"
+                        type="submit">submit</button>
+                </form>
+            </div>
+        </section>
+    </div>
+    <footer class="h-6 mt-24 flex items-center px-2 bg-brand-2 font-mono text-sm">
+        Website &copy; BlueProof 2023
+    </footer>
+</body>
+
+
+</html>
+
+<!--  
+    <section data-paralax=true class="what-we-do" id="what-we-do">
+            <div class="content title-l-r">
+                <h1 class="title">What we do.</h1>
+                <div class="left">
+                    <p class="left">BlueProof is a website-building agency that specialises in the integration of 3D
+                        digital
+                        models. Whether you’re an event organiser wanting to provide an interactive map for your guests,
+                        or
+                        a designer looking for a new way of displaying your products, we can build your virtual models
+                        for
+                        you and smoothly embed them within a curated website with seamless real-time rendering. As well
+                        as
+                        blowing your viewers’ minds with this impressive feature, we can help you achieve your
+                        sustainability targets by going paper-free. We have experience in building and integrating
+                        anything
+                        from simple hand-held gadgets to large festival maps, however if you have something more
+                        specific or
+                        unusual in mind, please let us know. So, if you want to be the owner of the next BlueProof
+                        experience, please get in touch and we’ll take it from there.</p>
+                    <div class="social-bar">
+                        <a target="_blank" href="mailto:admin@blueproof.online"><img class="h-6"
+                                src="res/icons/email.png" /></a>
+                        <a href="https://www.linkedin.com/company/blueproof-online/" target="_blank"><img
+                                class="h-6" src="res/icons/in.png" /></a>
+                        <a href="https://www.instagram.com/blueproof.online/" target="_blank"><img class="h-6"
+                                src="res/icons/ig.png" /></a>
+                        <a href="https://www.facebook.com/profile.php?id=100092491866073" target="_blank"><img
+                                class="h-6" src="res/icons/fb.png" /></a>
+                    </div>
+                </div>
+            <div class="feature-grid right">
+                <div class="feature"> <img src="res/icons/Animation.png" class="image"
+                            alt="an animation of a ball bouncing">
+                        <h2 class="name">ANIMATION</h2>
+                    </div>
+                    <div class="feature"> <img src="res/icons/3D modelling.png" class="image"
+                            alt="a 3D model of a house">
+                        <h2 class="name">3D MODELLING</h2>
+                    </div>
+                    <div class="feature"> <img src="res/icons/SEO.png" class="image"
+                            alt="a magnifying glass placed over a gear">
+                        <h2 class="name">SEO</h2>
+                    </div>
+                    <div class="feature"> <img src="res/icons/Analytics.png" class="image"
+                            alt="a graph with an upwards trend">
+                        <h2 class="name">ANALYTICS</h2>
+                    </div>
+                    <div class="feature"> <img src="res/icons/E-commerce.png" class="image"
+                            alt="a shoping trolley in front of a globe">
+                        <h2 class="name">E-COMMERCE</h2>
+                    </div>
+                    <div class="feature"> <img src="res/icons/Maintenance.png" class="image" alt="a spanner">
+                        <h2 class="name">MAINTENANCE</h2>
+                    </div>
+                 </div> 
+                <div class="right interactive-model-container">
+                    <canvas id="interactive-model">
+                    </canvas>
+                    <p class="interactive-model-tagline">
+                        Set design for Romeo and Juliet Arena di Verona, 2019, by artist David Umemoto
+                    </p>
+                    <p class="interactive-model-helper">
+                        drag to interact
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section data-paralax=true class="case-study" id="case-study">
+            <div class="content title-l-r">
+                <h1 class="title">Case study - Jesus College May Ball 2022</h1>
+                <div class="left">
+                    <img alt="A 3D rendering of the location of a live event" src="res/images/jesus_render.webp" />
+                </div>
+                <div class="right">
+                    <div>
+                        <p>May Balls are celebrations at the end of the academic year that take place at any of the
+                            colleges of the University of Cambridge. These events can have up to 3,000 guests and
+                            provide
+                            various food, drink, music and other forms of entertainment throughout the evening. This
+                            year,
+                            BlueProof designed and built a web app for the Jesus College May Ball - the largest May Ball
+                            in
+                            Cambridge.
+                        </p>
+                        <p>
+                            BlueProof will always start off by building a unique digital model of the event grounds,
+                            paying
+                            special attention to the organiser’s needs and preferences.
+                        </p>
+                        <p>
+                            Custom icons - such as a knife and fork or a martini glass - will be made and subsequently
+                            placed
+                            within the model to reflect whatever the event has to offer. Users of the app will then be
+                            able
+                            to
+                            click on the various icons to access various information.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="content title-r-l">
+                <div class="right">
+                    <img id="case-study-img-2" alt="A screenshot of the Jesus College May Ball 2022 companion app"
+                        src="res/images/jesus_screenshot.webp" />
+                </div>
+                <div class="left">
+                    <div>
+                        <p>
+                            The data can be easily inputted by the organisers via an easy to use interface, giving them
+                            the
+                            capacity to add and edit and information up to the event.
+                        </p>
+                        <p>
+                            The BlueProof web app is ideal for any medium to large scale event: all essential
+                            information is easily accessed via guests’ phones, negating the need to carry a physical
+                            programme or map. This sustainable solution also allows for 3D visual cues, maximising the
+                            legibility and comprehension of the map.
+                        </p>
+                        <p>
+                            Ideal for corporate events, conferences, festivals, sporting events.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section data-paralax=true class="projects" id="projects">
+            <div class="content">
+                <div id="projects-carousel" class="carousel content" data-active-index="0">
+                    <div class="carousel-items">
+                        <div class="carousel-item">
+                            <div class="project">
+                                <div class="image"> <img
+                                        alt="A screenshot of the Wolfson College May Ball app viewed on a laptop"
+                                        class="laptop" src="res/projects/wmb_laptop.webp" /> <img
+                                        alt="A screenshot of the Wolfson College May Ball app viewed on a mobile phone"
+                                        class="mobile" src="res/projects/wmb_mobile.webp" /> </div>
+                                <h2 class="name">Wolfson May Ball Companion App</h2>
+                                <div class="text">
+                                    <p class="quote">
+                                        "BlueProof were fantastic to work with! After they built the infrastructure
+                                        for
+                                        our app, we were given access to the admin portal to input our data. This
+                                        was
+                                        really useful for us because it gave us real-time control over the app's
+                                        content
+                                        when last-minute chaos led to frequent small changes. The data entry system
+                                        was
+                                        easy to use by following a clear and thorough guide that BlueProof provided,
+                                        specific to the features built into our app. Very pleased with the end
+                                        result
+                                        and was a pleasure working with them!"
+                                    </p>
+                                    <p class="author">- Dan Scott, <i>Vice President</i></p> <a class="view"
+                                        href="https://app.wolfsoncollegemayball.com" target="_blank">view</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="project">
+                                <div class="image"> <img
+                                        alt="A screenshot of the Jesus May Ball website viewed on a laptop"
+                                        class="laptop" src="res/projects/jmb_laptop.webp" /> <img
+                                        alt="A screenshot of the Jesus May Ball website viewed on a mobile phone"
+                                        class="mobile" src="res/projects/jmb_mobile.webp" /> </div>
+                                <h2 class="name">Jesus May Ball 2022 - Taking Flight</h2>
+                                <div class="text">
+                                    <p class="quote">
+                                        "Rafi and Max communicated effectively throughout the ideation and design
+                                        process which resulted in an end product highly tailored to our needs. What
+                                        was
+                                        most helpful was their own suggestions as they continued to search for ways
+                                        to
+                                        exceed our predetermined objectives."
+                                    </p>
+                                    <p class="author">- Rohit Kale, <i>President</i></p> <a class="view"
+                                        href="https://www.jesusmayball.com" target="_blank">view</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="project">
+                                <div class="image"> <img
+                                        alt="A screenshot of the Joe Fenwick-Wilson website viewed on a laptop"
+                                        class="laptop" src="res/projects/jfw_laptop.webp" /> <img
+                                        alt="A screenshot of the Joe Fenwick-Wilson website viewed on a mobile phone"
+                                        class="mobile" src="res/projects/jfw_mobile.webp" /> </div>
+                                <h2 class="name">Joe Fenwick-Wilson</h2>
+                                <div class="text">
+                                    <p class="quote">
+                                        "BlueProof are a multitalented, incredibly professional service.
+                                        They worked closely with me to create animations, take photographs of my
+                                        artworks and helped me to find the right words to communicate important
+                                        information to my clients. I couldn’t recommend them more, not only for
+                                        their
+                                        friendly and serious approach but also for the support they offered
+                                        post-launch."
+                                    </p>
+                                    <p class="author">- Joe Fenwick-Wilson, <i>Artist</i></p> <a class="view"
+                                        href="https://www.joefenwickwilson.co.uk/" target="_blank">view</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="project">
+                                <div class="image"> <img
+                                        alt="A screenshot of the May Week Mega Event website viewed on a laptop"
+                                        class="laptop" src="res/projects/mwme_laptop.webp" /> <img
+                                        alt="A screenshot of the May Week Mega Event website viewed on a mobile phone"
+                                        class="mobile" src="res/projects/mwme_mobile.webp" /> </div>
+                                <h2 class="name">May Week Mega Event</h2>
+                                <div class="text">
+                                    <p class="quote">
+                                        "The team were an absolute pleasure to work with throughout the
+                                        process - both as collaborators and as creatives. They were consistently
+                                        responsive to all our requests and provided many excellent suggestions of
+                                        their
+                                        own, turning our vision into a reality. Couldn't recommend BlueProof more
+                                        highly!"
+                                    </p>
+                                    <p class="author">- George Rosenfeld, <i>President</i></p>
+                                    <a class="view" href="res/projects/mwme.pdf" target="_blank">view</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="project">
+                                <div class="image"> <img alt="A screenshot of the Kol Tov website viewed on a laptop"
+                                        class="laptop" src="res/projects/kt_laptop.webp" /> <img
+                                        alt="A screenshot of the Kol Tov website viewed on a mobile phone"
+                                        class="mobile" src="res/projects/kt_mobile.webp" /> </div>
+                                <h2 class="name">Kol Tov</h2>
+                                <div class="text">
+                                    <p class="quote">
+                                        "We had a short time frame to rebrand and bring our new website into use.
+                                        BlueProof were incredibly professional and efficient and completed it in
+                                        good
+                                        time. The final website, which we are incredibly happy with, was achieved
+                                        through giving us weekly updates on progress in which we discussed edits.
+                                        They
+                                        were great to work with, passionate about their work and approachable and
+                                        friendly in the way they addressed everything. Highly recommend."
+                                    </p>
+                                    <p class="author">- Asher Levy, <i>Director</i></p> <a class="view"
+                                        href="https://koltovmusic.com/" target="_blank">view</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="project">
+                                <div class="image"> <img
+                                        alt="A screenshot of the Juliet Mitchell website viewed on a laptop"
+                                        class="laptop" src="res/projects/jm_laptop.webp" /> <img
+                                        alt="A screenshot of the Juliet Mitchell website viewed on a mobile phone"
+                                        class="mobile" src="res/projects/jm_mobile.webp" /> </div>
+                                <h2 class="name">Juliet Mitchell</h2>
+                                <div class="text">
+                                    <p class="quote">
+                                        "I always <b>see</b> rather than <b>read</b> BlueProof's beautiful website.
+                                        The
+                                        colours and elegant
+                                        visual aesthetics are a welcome relief from my too many texts!"
+                                    </p>
+                                    <p class="author">- Juliet Mitchell, <i>Psychoanalyst, Research Professor,
+                                            Author</i></p> <a class="view" href="https://www.julietmitchell.co.uk/"
+                                        target="_blank">view</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="left carousel-btn" data-dir="left" data-for="projects-carousel"
+                        aria-label="scroll carousel left">
+                        <img class="arrow" src="res/icons/arrow_l.png" alt="left arrow" />
+                    </button>
+                    <button class="right carousel-btn" data-dir="right" data-for="projects-carousel"
+                        aria-label="scroll carousel right">
+                        <img class="arrow" src="res/icons/arrow_r.png" alt="right arrow" />
+                    </button>
+                </div>
+            </div>
+        </section>
+        <section data-paralax=true class="contact" id="contact">
+            <div class="title-l-r content">
+                <h1 class="title">Enquire.</h1>
+                <div class="left">
+                    <p> If you would like to get a quotation, discuss a project with us, or just find out a
+                        little more about what we do, then please fill in the form and we'll get back to you within
+                        48
+                        hours. We offer a free short consultation with every new client, so don't hesitate to get in
+                        touch.
+                    </p>
+                    <div class="social-bar">
+                        <a target="_blank" href="mailto:admin@blueproof.online"><img class="h-6"
+                                src="res/icons/email.png" /></a>
+                        <a href="https://www.linkedin.com/company/blueproof-online/" target="_blank"><img
+                                class="h-6" src="res/icons/in.png" /></a>
+                        <a href="https://www.instagram.com/blueproof.online/" target="_blank"><img class="h-6"
+                                src="res/icons/ig.png" /></a>
+                        <a href="https://www.facebook.com/profile.php?id=100092491866073" target="_blank"><img
+                                class="h-6" src="res/icons/fb.png" /></a>
+                    </div>
+                </div>
+                <form id="contact-form" class="contact-form right">
+                    <div class="form-group">
+                        <label for="contact-form-name">Name: </label>
+                        <input type="text" name="name" id="contact-form-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-form-email">Email: </label>
+                        <input type="email" name="email" id="contact-form-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-form-budget">Budget: </label>
+                        <div class="select-div">
+                            <select form="contact-form" name="budget" id="contact-form-budget" required>
+                                <option disabled selected value>See options...</option>
+                                <option value="lt 2000">&lt; £2,000</option>
+                                <option value="2000-3000">£2,000 - £3,000</option>
+                                <option value="3000-5000">£3,000 - £5,000</option>
+                                <option value="5000-10000">£5,000 - £10,000</option>
+                                <option value="gt 10000">&gt; £10,000</option>
+                            </select>
+                        </div>
+                    </div> 
+                    <div class="form-group">
+                        <label for="contact-form-description">Describe your project:</label>
+                        <textarea form="contact-form" name="description" id="contact-form-description" rows="5"
+                            required></textarea>
+                    </div>
+                    <button class="submit" type="submit"> submit </button>
+                </form>
+            </div>
+        </section>
+       <section data-paralax=true class="story" id="story">     
+-->

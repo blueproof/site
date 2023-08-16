@@ -1,12 +1,20 @@
 {
     "devDependencies": {
         "@parcel/transformer-sass": "^2.9.3",
+        "@types/three": "^0.155.0",
         "parcel": "^2.9.3",
-        "reload": "^3.2.1"
+        "postcss": "^8.4.27",
+        "reload": "^3.2.1",
+        "tailwindcss": "^3.3.3",
+        "tailwindcss-animated": "^1.0.1"
     },
     "scripts": {
-        "dev": "parcel index.html",
-        "build": "parcel build index.html",
+        "dev": "parcel src/index.html",
+        "build": "parcel build src/index.html",
         "serve": "reload -d dist/"
+    },
+    "dependencies": {
+        "lax.js": "^2.0.3",
+        "three": "^0.155.0"
     }
 }

@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap");
+@font-face {
+    font-family: "Articulat";
+    src: url("res/fonts/ArticulatCF-Normal.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body::-webkit-scrollbar {
+        width: 8px;
+    }
+    body::-webkit-scrollbar-thumb {
+        @apply bg-brand-2;
+        border-radius: 10px;
+    }
+    body::-webkit-scrollbar-track {
+        @apply bg-background;
+    }
+
+    ::selection {
+        @apply bg-select;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply font-articulat;
+        @apply tracking-[1.6mm];
+    }
+
+    p {
+        @apply tracking-[.1em];
+    }
+
+    a {
+        filter: none;
+        cursor: pointer;
+        transform: scale(1);
+        display: block;
+    }
+    a:hover {
+        @apply drop-shadow-brand;
+    }
+    a:active {
+        transform: scale(1.04);
+    }
+}
+
+@layer utilities {
+    .drop-shadow-brand {
+        filter: drop-shadow(0 0.35px 0 theme("colors.brand.1"))
+            drop-shadow(0 0.7px 0 theme("colors.brand.2"))
+            drop-shadow(0 1.05px 0 theme("colors.brand.3"))
+            drop-shadow(0 1.4px 0 theme("colors.brand.4"))
+            drop-shadow(0 1.75px 0 theme("colors.brand.5"))
+            drop-shadow(0 2.1px 0 theme("colors.brand.6"));
+        transition: filter 0.15s ease-in-out;
+    }
+}
