@@ -26,6 +26,7 @@ const camera = new THREE.PerspectiveCamera(40, canvas.clientWidth / canvas.clien
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableZoom = false;
 controls.maxPolarAngle = Math.PI / 2;
+controls.enablePan = false;
 const CAMERA_0 = [0, 20, 30];
 camera.position.set(0, 20, 30);
 // camera.lookAt(0, -1, 0)
