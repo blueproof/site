@@ -56,9 +56,9 @@ loader.load(url.pathname, function (gltf) {
     })
     scene.add(MAIN_SCENE);
 
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.75);
 
-    const light2 = new THREE.PointLight(new THREE.Color(210, 210, 255), 3);
+    const light2 = new THREE.PointLight(new THREE.Color(210, 210, 255), 4.5);
     light2.position.set(0, 25, 2);
     light2.castShadow = true;
     light2.shadow.radius = 15;
@@ -67,7 +67,7 @@ loader.load(url.pathname, function (gltf) {
     light2.shadow.mapSize = new THREE.Vector2(1024, 1024);
     light2.shadow.bias = -0.005;
 
-    const light3 = new THREE.PointLight(new THREE.Color(255, 200, 225), 1);
+    const light3 = new THREE.PointLight(new THREE.Color(255, 200, 225), 2.5);
     light3.position.set(0, 10, -13);
     light3.castShadow = true;
     light3.shadow.radius = 1;
