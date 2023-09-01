@@ -101,6 +101,4 @@ window.addEventListener("load", function () {
     this.document.querySelectorAll(".main-nav").forEach((el) => {
         el.classList.remove("hidden");
     })
-
-
 });

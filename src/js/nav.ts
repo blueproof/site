@@ -9,9 +9,9 @@ window.addEventListener("load", () => {
 
     let isOpenMobile = navEl.dataset.openMobile == "true";
 
-    const scrollToEl = (event: Event, id: string) => {
-        event.preventDefault();
-        event.stopPropagation();
+    const scrollToEl = (id: string, event?: Event) => {
+        event?.preventDefault();
+        event?.stopPropagation();
         const el = document.querySelector("#" + id);
         if (el == null) return console.error("No element found with the given id");
         el.scrollIntoView({
@@ -52,8 +52,17 @@ window.addEventListener("load", () => {
         a.addEventListener("click", (ev) => {
             const target = a.getAttribute("data-target");
             if (!target) return;
-            scrollToEl(ev, target)
+            scrollToEl(target, ev)
         })
     }
+
+    const SCROLL_TIME = 3000; //3s after page load
+    this.setTimeout(() => {
+        if (window.scrollY <= 100) {
+            scrollToEl("what-we-do");
+            console.log(123)
+        }
+    }, SCROLL_TIME)
+
 })
 

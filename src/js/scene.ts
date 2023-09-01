@@ -2,9 +2,11 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+import { MeshoptDecoder } from "meshoptimizer";
 
 const canvas = document.querySelector("#interactive-model");
-if (canvas === null) throw new Error("Canvas element was not found.")
+const loadingSpinner = document.querySelector("#loading-spinner");
+if (canvas === null || loadingSpinner === null) throw new Error("Canvas element was not found.")
 const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
 
 function resizeRendererToDisplaySize(renderer: THREE.WebGLRenderer) {
@@ -43,8 +45,9 @@ function updateMaterials(root, update) {
     }
 }
 const loader = new GLTFLoader();
+loader.setMeshoptDecoder(MeshoptDecoder)
 let MAIN_SCENE;
-const url = new URL('../res/models/scene_new_opt.glb', import.meta.url)
+const url = new URL('../res/models/scene_opt.glb', import.meta.url)
 loader.load(url.pathname, function (gltf) {
     MAIN_SCENE = gltf.scene;
     MAIN_SCENE.position.set(0, -2, 0);
@@ -56,19 +59,19 @@ loader.load(url.pathname, function (gltf) {
     })
     scene.add(MAIN_SCENE);
 
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.75);
 
-    const light2 = new THREE.PointLight(new THREE.Color(210, 210, 255), 4.5);
-    light2.position.set(0, 25, 2);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 1.6);
+    const light2 = new THREE.PointLight(new THREE.Color(200, 200, 255), 1.6);
+    light2.position.set(7, 10, -7);
     light2.castShadow = true;
     light2.shadow.radius = 15;
-    light2.shadow.camera.near = 6;
+    light2.shadow.camera.near = 1;
     light2.shadow.camera.far = 30;
     light2.shadow.mapSize = new THREE.Vector2(1024, 1024);
     light2.shadow.bias = -0.005;
 
-    const light3 = new THREE.PointLight(new THREE.Color(255, 200, 225), 2.5);
-    light3.position.set(0, 10, -13);
+    const light3 = new THREE.PointLight(new THREE.Color(255, 200, 200), 1.6);
+    light3.position.set(0, 10, 6);
     light3.castShadow = true;
     light3.shadow.radius = 1;
     light3.shadow.camera.near = 1;
@@ -76,9 +79,13 @@ loader.load(url.pathname, function (gltf) {
     light3.shadow.mapSize = new THREE.Vector2(1024, 1024);
     light3.shadow.bias = -0.004;
 
-    scene.add(ambientLight)
-    scene.add(light2)
+    scene.add(ambientLight);
+    scene.add(light2);
     scene.add(light3);
+
+    loadingSpinner.setAttribute("data-hidden", "true")
+    canvas.setAttribute("data-hidden", "false")
+
     render();
 
 }, undefined, function (error) {

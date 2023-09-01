@@ -10,7 +10,7 @@ const intersectionObserver = new IntersectionObserver((entries) => {
 }, {
     root: null,
     rootMargin: "0px",
-    threshold: 0.3
+    threshold: 0
 })
 document.querySelectorAll<HTMLElement>("*[data-fade-in]").forEach((el) => {
     el.style.opacity = "0";

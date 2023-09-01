@@ -7,7 +7,6 @@ module.exports = {
     extend: {
       fontFamily: {
         "articulat": ["Articulat", "sans-serif"],
-        "lora": ["Lora", "serif"],
         "arial": ["Arial", "sans-serif"]
       },
       colors: {
