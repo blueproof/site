@@ -1,6 +1,5 @@
 
 window.addEventListener("load", () => {
-
     const navEl = document.querySelector("nav");
     const navItemsEl = document.querySelector<HTMLUListElement>("#nav-items");
     const navCloseEl = document.querySelector<HTMLButtonElement>("#nav-close")
@@ -55,14 +54,6 @@ window.addEventListener("load", () => {
             scrollToEl(target, ev)
         })
     }
-
-    const SCROLL_TIME = 3000; //3s after page load
-    this.setTimeout(() => {
-        if (window.scrollY <= 100) {
-            scrollToEl("what-we-do");
-            console.log(123)
-        }
-    }, SCROLL_TIME)
 
 })
 

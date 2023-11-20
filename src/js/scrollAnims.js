@@ -60,6 +60,10 @@ window.addEventListener("load", function () {
             ],
         }
     });
+    this.document.querySelector("#hero-down-arrow-link").addEventListener("click", (ev) => {
+        ev.preventDefault();
+        this.document.querySelector("#what-we-do").scrollIntoView({ behavior: "smooth" })
+    })
 
     lax.addElements('#nav-left', {
         scrollY: {
